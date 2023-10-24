@@ -1,6 +1,9 @@
-These tech briefs provide others an opportunity to comment on areas of focus for P3109 without sharing internal information.
+These briefs provide an opportunity to read about and comment on areas of focus for P3109. 
 
 The Character of Binary8 Formats
-    Gives parameterized expressions for binary8 formats' counts and extremal magnitudes for normal and subnormal values.
-    
+- Gives binary8 formats' counts and extremals with parameterized expressions.
+- Covers normal and subnormal values
+
 All information is preliminary and subject to correction and change. You are welcome to comment by creating an "issue".
+
+All information present is shared in accord with working group guidelines. 
