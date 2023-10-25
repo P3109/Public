@@ -6,5 +6,5 @@ The Character of Binary8 Formats
 
 All information is preliminary and subject to correction and change.
 - All content is shared in accord with working group guidelines. 
-> You are welcome to comment by creating an "issue".
+- _You are welcome to comment by creating an "issue"._
 
