@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <style>
+  <head>
+    <meta charset="utf-8" />
+    <title>FP8 Value Table, p3109_p2</title>
+    <style>
   body {
   }
   table {
@@ -11,7 +14,9 @@
     border-collapse: collapse;
   }
 
-  tr {
+  tr.blankrow {
+    height: 4ex;
+    vertical-align: top;
   }
   
   td {
@@ -28,920 +33,908 @@
     color: #012187;
   }
   
+  .normal {
+  }
+  
   pre {
     margin: 1pt 1pt 13pt 13pt;
     display: inline;
   }
 </style>
-  <head>
-    <meta charset="utf-8" />
-    <title>FP8 Value Table, p3109_p2</title>
   </head>
   <body>
     <h3>FP8 Value Table, p3109_p2</h3>
     <table>
-      <tr>
+      <tr class="">
         <td class="subnormal">
           <pre>0x00 0_000000_0 = 0.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x40 0_100000_0 = +0b1.0*2^0   = 1.0</pre>
         </td>
         <td class="special">
           <pre>0x80 1_000000_0 = NaN</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc0 1_100000_0 = -0b1.0*2^0   = -1.0</pre>
         </td>
       </tr>
-      <tr>
+      <tr class="">
         <td class="subnormal">
           <pre>0x01 0_000000_1 = +0b0.1*2^-31 = ~2.3283064e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x41 0_100000_1 = +0b1.1*2^0   = 1.5</pre>
         </td>
         <td class="subnormal">
           <pre>0x81 1_000000_1 = -0b0.1*2^-31 = ~-2.3283064e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc1 1_100000_1 = -0b1.1*2^0   = -1.5</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x02 0_000001_0 = +0b1.0*2^-31 = ~4.6566129e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x42 0_100001_0 = +0b1.0*2^1   = 2.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x82 1_000001_0 = -0b1.0*2^-31 = ~-4.6566129e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc2 1_100001_0 = -0b1.0*2^1   = -2.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x03 0_000001_1 = +0b1.1*2^-31 = ~6.9849193e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x43 0_100001_1 = +0b1.1*2^1   = 3.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x83 1_000001_1 = -0b1.1*2^-31 = ~-6.9849193e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc3 1_100001_1 = -0b1.1*2^1   = -3.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x04 0_000010_0 = +0b1.0*2^-30 = ~9.3132257e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x44 0_100010_0 = +0b1.0*2^2   = 4.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x84 1_000010_0 = -0b1.0*2^-30 = ~-9.3132257e-10</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc4 1_100010_0 = -0b1.0*2^2   = -4.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x05 0_000010_1 = +0b1.1*2^-30 = ~1.3969839e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x45 0_100010_1 = +0b1.1*2^2   = 6.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x85 1_000010_1 = -0b1.1*2^-30 = ~-1.3969839e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc5 1_100010_1 = -0b1.1*2^2   = -6.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x06 0_000011_0 = +0b1.0*2^-29 = ~1.8626451e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x46 0_100011_0 = +0b1.0*2^3   = 8.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x86 1_000011_0 = -0b1.0*2^-29 = ~-1.8626451e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc6 1_100011_0 = -0b1.0*2^3   = -8.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x07 0_000011_1 = +0b1.1*2^-29 = ~2.7939677e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x47 0_100011_1 = +0b1.1*2^3   = 12.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x87 1_000011_1 = -0b1.1*2^-29 = ~-2.7939677e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc7 1_100011_1 = -0b1.1*2^3   = -12.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x08 0_000100_0 = +0b1.0*2^-28 = ~3.7252903e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x48 0_100100_0 = +0b1.0*2^4   = 16.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x88 1_000100_0 = -0b1.0*2^-28 = ~-3.7252903e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc8 1_100100_0 = -0b1.0*2^4   = -16.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x09 0_000100_1 = +0b1.1*2^-28 = ~5.5879354e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x49 0_100100_1 = +0b1.1*2^4   = 24.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x89 1_000100_1 = -0b1.1*2^-28 = ~-5.5879354e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xc9 1_100100_1 = -0b1.1*2^4   = -24.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0a 0_000101_0 = +0b1.0*2^-27 = ~7.4505806e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4a 0_100101_0 = +0b1.0*2^5   = 32.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8a 1_000101_0 = -0b1.0*2^-27 = ~-7.4505806e-09</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xca 1_100101_0 = -0b1.0*2^5   = -32.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0b 0_000101_1 = +0b1.1*2^-27 = ~1.1175871e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4b 0_100101_1 = +0b1.1*2^5   = 48.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8b 1_000101_1 = -0b1.1*2^-27 = ~-1.1175871e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xcb 1_100101_1 = -0b1.1*2^5   = -48.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0c 0_000110_0 = +0b1.0*2^-26 = ~1.4901161e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4c 0_100110_0 = +0b1.0*2^6   = 64.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8c 1_000110_0 = -0b1.0*2^-26 = ~-1.4901161e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xcc 1_100110_0 = -0b1.0*2^6   = -64.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0d 0_000110_1 = +0b1.1*2^-26 = ~2.2351742e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4d 0_100110_1 = +0b1.1*2^6   = 96.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8d 1_000110_1 = -0b1.1*2^-26 = ~-2.2351742e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xcd 1_100110_1 = -0b1.1*2^6   = -96.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0e 0_000111_0 = +0b1.0*2^-25 = ~2.9802322e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4e 0_100111_0 = +0b1.0*2^7   = 128.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8e 1_000111_0 = -0b1.0*2^-25 = ~-2.9802322e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xce 1_100111_0 = -0b1.0*2^7   = -128.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x0f 0_000111_1 = +0b1.1*2^-25 = ~4.4703484e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x4f 0_100111_1 = +0b1.1*2^7   = 192.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x8f 1_000111_1 = -0b1.1*2^-25 = ~-4.4703484e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xcf 1_100111_1 = -0b1.1*2^7   = -192.0</pre>
         </td>
       </tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <tr>
-        <td class="">
+      <tr class="blankrow">
+        <td class="normal">
           <pre>0x10 0_001000_0 = +0b1.0*2^-24 = ~5.9604645e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x50 0_101000_0 = +0b1.0*2^8   = 256.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x90 1_001000_0 = -0b1.0*2^-24 = ~-5.9604645e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd0 1_101000_0 = -0b1.0*2^8   = -256.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x11 0_001000_1 = +0b1.1*2^-24 = ~8.9406967e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x51 0_101000_1 = +0b1.1*2^8   = 384.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x91 1_001000_1 = -0b1.1*2^-24 = ~-8.9406967e-08</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd1 1_101000_1 = -0b1.1*2^8   = -384.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x12 0_001001_0 = +0b1.0*2^-23 = ~1.1920929e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x52 0_101001_0 = +0b1.0*2^9   = 512.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x92 1_001001_0 = -0b1.0*2^-23 = ~-1.1920929e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd2 1_101001_0 = -0b1.0*2^9   = -512.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x13 0_001001_1 = +0b1.1*2^-23 = ~1.7881393e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x53 0_101001_1 = +0b1.1*2^9   = 768.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x93 1_001001_1 = -0b1.1*2^-23 = ~-1.7881393e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd3 1_101001_1 = -0b1.1*2^9   = -768.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x14 0_001010_0 = +0b1.0*2^-22 = ~2.3841858e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x54 0_101010_0 = +0b1.0*2^10  = 1024.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x94 1_001010_0 = -0b1.0*2^-22 = ~-2.3841858e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd4 1_101010_0 = -0b1.0*2^10  = -1024.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x15 0_001010_1 = +0b1.1*2^-22 = ~3.5762787e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x55 0_101010_1 = +0b1.1*2^10  = 1536.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x95 1_001010_1 = -0b1.1*2^-22 = ~-3.5762787e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd5 1_101010_1 = -0b1.1*2^10  = -1536.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x16 0_001011_0 = +0b1.0*2^-21 = ~4.7683716e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x56 0_101011_0 = +0b1.0*2^11  = 2048.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x96 1_001011_0 = -0b1.0*2^-21 = ~-4.7683716e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd6 1_101011_0 = -0b1.0*2^11  = -2048.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x17 0_001011_1 = +0b1.1*2^-21 = ~7.1525574e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x57 0_101011_1 = +0b1.1*2^11  = 3072.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x97 1_001011_1 = -0b1.1*2^-21 = ~-7.1525574e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd7 1_101011_1 = -0b1.1*2^11  = -3072.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x18 0_001100_0 = +0b1.0*2^-20 = ~9.5367432e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x58 0_101100_0 = +0b1.0*2^12  = 4096.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x98 1_001100_0 = -0b1.0*2^-20 = ~-9.5367432e-07</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd8 1_101100_0 = -0b1.0*2^12  = -4096.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x19 0_001100_1 = +0b1.1*2^-20 = ~1.4305115e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x59 0_101100_1 = +0b1.1*2^12  = 6144.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x99 1_001100_1 = -0b1.1*2^-20 = ~-1.4305115e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xd9 1_101100_1 = -0b1.1*2^12  = -6144.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1a 0_001101_0 = +0b1.0*2^-19 = ~1.9073486e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5a 0_101101_0 = +0b1.0*2^13  = 8192.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9a 1_001101_0 = -0b1.0*2^-19 = ~-1.9073486e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xda 1_101101_0 = -0b1.0*2^13  = -8192.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1b 0_001101_1 = +0b1.1*2^-19 = ~2.8610229e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5b 0_101101_1 = +0b1.1*2^13  = 12288.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9b 1_001101_1 = -0b1.1*2^-19 = ~-2.8610229e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xdb 1_101101_1 = -0b1.1*2^13  = -12288.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1c 0_001110_0 = +0b1.0*2^-18 = ~3.8146973e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5c 0_101110_0 = +0b1.0*2^14  = 16384.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9c 1_001110_0 = -0b1.0*2^-18 = ~-3.8146973e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xdc 1_101110_0 = -0b1.0*2^14  = -16384.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1d 0_001110_1 = +0b1.1*2^-18 = ~5.7220459e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5d 0_101110_1 = +0b1.1*2^14  = 24576.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9d 1_001110_1 = -0b1.1*2^-18 = ~-5.7220459e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xdd 1_101110_1 = -0b1.1*2^14  = -24576.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1e 0_001111_0 = +0b1.0*2^-17 = ~7.6293945e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5e 0_101111_0 = +0b1.0*2^15  = 32768.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9e 1_001111_0 = -0b1.0*2^-17 = ~-7.6293945e-06</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xde 1_101111_0 = -0b1.0*2^15  = -32768.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x1f 0_001111_1 = +0b1.1*2^-17 = ~1.1444092e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x5f 0_101111_1 = +0b1.1*2^15  = 49152.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x9f 1_001111_1 = -0b1.1*2^-17 = ~-1.1444092e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xdf 1_101111_1 = -0b1.1*2^15  = -49152.0</pre>
         </td>
       </tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <tr>
-        <td class="">
+      <tr class="blankrow">
+        <td class="normal">
           <pre>0x20 0_010000_0 = +0b1.0*2^-16 = ~1.5258789e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x60 0_110000_0 = +0b1.0*2^16  = 65536.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa0 1_010000_0 = -0b1.0*2^-16 = ~-1.5258789e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe0 1_110000_0 = -0b1.0*2^16  = -65536.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x21 0_010000_1 = +0b1.1*2^-16 = ~2.2888184e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x61 0_110000_1 = +0b1.1*2^16  = 98304.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa1 1_010000_1 = -0b1.1*2^-16 = ~-2.2888184e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe1 1_110000_1 = -0b1.1*2^16  = -98304.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x22 0_010001_0 = +0b1.0*2^-15 = ~3.0517578e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x62 0_110001_0 = +0b1.0*2^17  = 131072.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa2 1_010001_0 = -0b1.0*2^-15 = ~-3.0517578e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe2 1_110001_0 = -0b1.0*2^17  = -131072.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x23 0_010001_1 = +0b1.1*2^-15 = ~4.5776367e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x63 0_110001_1 = +0b1.1*2^17  = 196608.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa3 1_010001_1 = -0b1.1*2^-15 = ~-4.5776367e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe3 1_110001_1 = -0b1.1*2^17  = -196608.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x24 0_010010_0 = +0b1.0*2^-14 = ~6.1035156e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x64 0_110010_0 = +0b1.0*2^18  = 262144.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa4 1_010010_0 = -0b1.0*2^-14 = ~-6.1035156e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe4 1_110010_0 = -0b1.0*2^18  = -262144.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x25 0_010010_1 = +0b1.1*2^-14 = ~9.1552734e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x65 0_110010_1 = +0b1.1*2^18  = 393216.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa5 1_010010_1 = -0b1.1*2^-14 = ~-9.1552734e-05</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe5 1_110010_1 = -0b1.1*2^18  = -393216.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x26 0_010011_0 = +0b1.0*2^-13 = ~0.00012207031</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x66 0_110011_0 = +0b1.0*2^19  = 524288.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa6 1_010011_0 = -0b1.0*2^-13 = ~-0.00012207031</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe6 1_110011_0 = -0b1.0*2^19  = -524288.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x27 0_010011_1 = +0b1.1*2^-13 = ~0.00018310547</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x67 0_110011_1 = +0b1.1*2^19  = 786432.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa7 1_010011_1 = -0b1.1*2^-13 = ~-0.00018310547</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe7 1_110011_1 = -0b1.1*2^19  = -786432.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x28 0_010100_0 = +0b1.0*2^-12 = 0.000244140625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x68 0_110100_0 = +0b1.0*2^20  = 1048576.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa8 1_010100_0 = -0b1.0*2^-12 = ~-0.00024414062</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe8 1_110100_0 = -0b1.0*2^20  = -1048576.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x29 0_010100_1 = +0b1.1*2^-12 = ~0.00036621094</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x69 0_110100_1 = +0b1.1*2^20  = 1572864.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xa9 1_010100_1 = -0b1.1*2^-12 = ~-0.00036621094</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xe9 1_110100_1 = -0b1.1*2^20  = -1572864.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2a 0_010101_0 = +0b1.0*2^-11 = 0.00048828125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6a 0_110101_0 = +0b1.0*2^21  = 2097152.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xaa 1_010101_0 = -0b1.0*2^-11 = -0.00048828125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xea 1_110101_0 = -0b1.0*2^21  = -2097152.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2b 0_010101_1 = +0b1.1*2^-11 = 0.000732421875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6b 0_110101_1 = +0b1.1*2^21  = 3145728.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xab 1_010101_1 = -0b1.1*2^-11 = ~-0.00073242188</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xeb 1_110101_1 = -0b1.1*2^21  = -3145728.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2c 0_010110_0 = +0b1.0*2^-10 = 0.0009765625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6c 0_110110_0 = +0b1.0*2^22  = 4194304.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xac 1_010110_0 = -0b1.0*2^-10 = -0.0009765625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xec 1_110110_0 = -0b1.0*2^22  = -4194304.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2d 0_010110_1 = +0b1.1*2^-10 = 0.00146484375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6d 0_110110_1 = +0b1.1*2^22  = 6291456.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xad 1_010110_1 = -0b1.1*2^-10 = -0.00146484375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xed 1_110110_1 = -0b1.1*2^22  = -6291456.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2e 0_010111_0 = +0b1.0*2^-9  = 0.001953125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6e 0_110111_0 = +0b1.0*2^23  = 8388608.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xae 1_010111_0 = -0b1.0*2^-9  = -0.001953125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xee 1_110111_0 = -0b1.0*2^23  = -8388608.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x2f 0_010111_1 = +0b1.1*2^-9  = 0.0029296875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x6f 0_110111_1 = +0b1.1*2^23  = 12582912.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xaf 1_010111_1 = -0b1.1*2^-9  = -0.0029296875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xef 1_110111_1 = -0b1.1*2^23  = -12582912.0</pre>
         </td>
       </tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <tr>
-        <td class="">
+      <tr class="blankrow">
+        <td class="normal">
           <pre>0x30 0_011000_0 = +0b1.0*2^-8  = 0.00390625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x70 0_111000_0 = +0b1.0*2^24  = 16777216.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb0 1_011000_0 = -0b1.0*2^-8  = -0.00390625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf0 1_111000_0 = -0b1.0*2^24  = -16777216.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x31 0_011000_1 = +0b1.1*2^-8  = 0.005859375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x71 0_111000_1 = +0b1.1*2^24  = 25165824.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb1 1_011000_1 = -0b1.1*2^-8  = -0.005859375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf1 1_111000_1 = -0b1.1*2^24  = -25165824.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x32 0_011001_0 = +0b1.0*2^-7  = 0.0078125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x72 0_111001_0 = +0b1.0*2^25  = 33554432.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb2 1_011001_0 = -0b1.0*2^-7  = -0.0078125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf2 1_111001_0 = -0b1.0*2^25  = -33554432.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x33 0_011001_1 = +0b1.1*2^-7  = 0.01171875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x73 0_111001_1 = +0b1.1*2^25  = 50331648.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb3 1_011001_1 = -0b1.1*2^-7  = -0.01171875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf3 1_111001_1 = -0b1.1*2^25  = -50331648.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x34 0_011010_0 = +0b1.0*2^-6  = 0.015625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x74 0_111010_0 = +0b1.0*2^26  = 67108864.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb4 1_011010_0 = -0b1.0*2^-6  = -0.015625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf4 1_111010_0 = -0b1.0*2^26  = -67108864.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x35 0_011010_1 = +0b1.1*2^-6  = 0.0234375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x75 0_111010_1 = +0b1.1*2^26  = 100663296.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb5 1_011010_1 = -0b1.1*2^-6  = -0.0234375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf5 1_111010_1 = -0b1.1*2^26  = -100663296.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x36 0_011011_0 = +0b1.0*2^-5  = 0.03125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x76 0_111011_0 = +0b1.0*2^27  = 134217728.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb6 1_011011_0 = -0b1.0*2^-5  = -0.03125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf6 1_111011_0 = -0b1.0*2^27  = -134217728.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x37 0_011011_1 = +0b1.1*2^-5  = 0.046875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x77 0_111011_1 = +0b1.1*2^27  = 201326592.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb7 1_011011_1 = -0b1.1*2^-5  = -0.046875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf7 1_111011_1 = -0b1.1*2^27  = -201326592.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x38 0_011100_0 = +0b1.0*2^-4  = 0.0625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x78 0_111100_0 = +0b1.0*2^28  = 268435456.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb8 1_011100_0 = -0b1.0*2^-4  = -0.0625</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf8 1_111100_0 = -0b1.0*2^28  = -268435456.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x39 0_011100_1 = +0b1.1*2^-4  = 0.09375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x79 0_111100_1 = +0b1.1*2^28  = 402653184.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xb9 1_011100_1 = -0b1.1*2^-4  = -0.09375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xf9 1_111100_1 = -0b1.1*2^28  = -402653184.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3a 0_011101_0 = +0b1.0*2^-3  = 0.125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x7a 0_111101_0 = +0b1.0*2^29  = 536870912.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xba 1_011101_0 = -0b1.0*2^-3  = -0.125</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xfa 1_111101_0 = -0b1.0*2^29  = -536870912.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3b 0_011101_1 = +0b1.1*2^-3  = 0.1875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x7b 0_111101_1 = +0b1.1*2^29  = 805306368.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xbb 1_011101_1 = -0b1.1*2^-3  = -0.1875</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xfb 1_111101_1 = -0b1.1*2^29  = -805306368.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3c 0_011110_0 = +0b1.0*2^-2  = 0.25</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x7c 0_111110_0 = +0b1.0*2^30  = 1073741824.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xbc 1_011110_0 = -0b1.0*2^-2  = -0.25</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xfc 1_111110_0 = -0b1.0*2^30  = -1073741824.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3d 0_011110_1 = +0b1.1*2^-2  = 0.375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x7d 0_111110_1 = +0b1.1*2^30  = 1610612736.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xbd 1_011110_1 = -0b1.1*2^-2  = -0.375</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xfd 1_111110_1 = -0b1.1*2^30  = -1610612736.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3e 0_011111_0 = +0b1.0*2^-1  = 0.5</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0x7e 0_111111_0 = +0b1.0*2^31  = 2147483648.0</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xbe 1_011111_0 = -0b1.0*2^-1  = -0.5</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xfe 1_111111_0 = -0b1.0*2^31  = -2147483648.0</pre>
         </td>
       </tr>
-      <tr>
-        <td class="">
+      <tr class="">
+        <td class="normal">
           <pre>0x3f 0_011111_1 = +0b1.1*2^-1  = 0.75</pre>
         </td>
         <td class="special">
           <pre>0x7f 0_111111_1 = +Inf</pre>
         </td>
-        <td class="">
+        <td class="normal">
           <pre>0xbf 1_011111_1 = -0b1.1*2^-1  = -0.75</pre>
         </td>
         <td class="special">
