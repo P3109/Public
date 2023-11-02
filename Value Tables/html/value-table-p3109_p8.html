@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  body {
+  }
+  table {
+    width:100%;
+    margin: 0pt;
+    font-family: monospace;
+    font-size: tiny;
+    border-collapse: collapse;
+  }
+
+  tr {
+  }
+  
+  td {
+    text-align: left;
+    border: solid 2px #ccc;
+    width: 24.5%;
+  }
+  
+  .special {
+    color: #874723;
+  }
+  
+  .subnormal {
+    color: #012187;
+  }
+  
+  pre {
+    margin: 1pt 1pt 13pt 13pt;
+    display: inline;
+  }
+</style>
+  <head>
+    <meta charset="utf-8" />
+    <title>FP8 Value Table, p3109_p8</title>
+  </head>
+  <body>
+    <h3>FP8 Value Table, p3109_p8</h3>
+    <table>
+      <tr>
+        <td class="subnormal">
+          <pre>0x00 0__0000000 = 0.0</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x40 0__1000000 = +0b0.1000000*2^1   = 1.0</pre>
+        </td>
+        <td class="special">
+          <pre>0x80 1__0000000 = NaN</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc0 1__1000000 = -0b0.1000000*2^1   = -1.0</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x01 0__0000001 = +0b0.0000001*2^1   = 0.015625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x41 0__1000001 = +0b0.1000001*2^1   = 1.015625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x81 1__0000001 = -0b0.0000001*2^1   = -0.015625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc1 1__1000001 = -0b0.1000001*2^1   = -1.015625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x02 0__0000010 = +0b0.0000010*2^1   = 0.03125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x42 0__1000010 = +0b0.1000010*2^1   = 1.03125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x82 1__0000010 = -0b0.0000010*2^1   = -0.03125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc2 1__1000010 = -0b0.1000010*2^1   = -1.03125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x03 0__0000011 = +0b0.0000011*2^1   = 0.046875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x43 0__1000011 = +0b0.1000011*2^1   = 1.046875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x83 1__0000011 = -0b0.0000011*2^1   = -0.046875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc3 1__1000011 = -0b0.1000011*2^1   = -1.046875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x04 0__0000100 = +0b0.0000100*2^1   = 0.0625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x44 0__1000100 = +0b0.1000100*2^1   = 1.0625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x84 1__0000100 = -0b0.0000100*2^1   = -0.0625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc4 1__1000100 = -0b0.1000100*2^1   = -1.0625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x05 0__0000101 = +0b0.0000101*2^1   = 0.078125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x45 0__1000101 = +0b0.1000101*2^1   = 1.078125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x85 1__0000101 = -0b0.0000101*2^1   = -0.078125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc5 1__1000101 = -0b0.1000101*2^1   = -1.078125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x06 0__0000110 = +0b0.0000110*2^1   = 0.09375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x46 0__1000110 = +0b0.1000110*2^1   = 1.09375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x86 1__0000110 = -0b0.0000110*2^1   = -0.09375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc6 1__1000110 = -0b0.1000110*2^1   = -1.09375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x07 0__0000111 = +0b0.0000111*2^1   = 0.109375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x47 0__1000111 = +0b0.1000111*2^1   = 1.109375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x87 1__0000111 = -0b0.0000111*2^1   = -0.109375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc7 1__1000111 = -0b0.1000111*2^1   = -1.109375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x08 0__0001000 = +0b0.0001000*2^1   = 0.125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x48 0__1001000 = +0b0.1001000*2^1   = 1.125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x88 1__0001000 = -0b0.0001000*2^1   = -0.125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc8 1__1001000 = -0b0.1001000*2^1   = -1.125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x09 0__0001001 = +0b0.0001001*2^1   = 0.140625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x49 0__1001001 = +0b0.1001001*2^1   = 1.140625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x89 1__0001001 = -0b0.0001001*2^1   = -0.140625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xc9 1__1001001 = -0b0.1001001*2^1   = -1.140625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0a 0__0001010 = +0b0.0001010*2^1   = 0.15625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4a 0__1001010 = +0b0.1001010*2^1   = 1.15625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8a 1__0001010 = -0b0.0001010*2^1   = -0.15625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xca 1__1001010 = -0b0.1001010*2^1   = -1.15625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0b 0__0001011 = +0b0.0001011*2^1   = 0.171875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4b 0__1001011 = +0b0.1001011*2^1   = 1.171875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8b 1__0001011 = -0b0.0001011*2^1   = -0.171875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xcb 1__1001011 = -0b0.1001011*2^1   = -1.171875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0c 0__0001100 = +0b0.0001100*2^1   = 0.1875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4c 0__1001100 = +0b0.1001100*2^1   = 1.1875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8c 1__0001100 = -0b0.0001100*2^1   = -0.1875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xcc 1__1001100 = -0b0.1001100*2^1   = -1.1875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0d 0__0001101 = +0b0.0001101*2^1   = 0.203125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4d 0__1001101 = +0b0.1001101*2^1   = 1.203125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8d 1__0001101 = -0b0.0001101*2^1   = -0.203125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xcd 1__1001101 = -0b0.1001101*2^1   = -1.203125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0e 0__0001110 = +0b0.0001110*2^1   = 0.21875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4e 0__1001110 = +0b0.1001110*2^1   = 1.21875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8e 1__0001110 = -0b0.0001110*2^1   = -0.21875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xce 1__1001110 = -0b0.1001110*2^1   = -1.21875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x0f 0__0001111 = +0b0.0001111*2^1   = 0.234375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x4f 0__1001111 = +0b0.1001111*2^1   = 1.234375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x8f 1__0001111 = -0b0.0001111*2^1   = -0.234375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xcf 1__1001111 = -0b0.1001111*2^1   = -1.234375</pre>
+        </td>
+      </tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <tr>
+        <td class="subnormal">
+          <pre>0x10 0__0010000 = +0b0.0010000*2^1   = 0.25</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x50 0__1010000 = +0b0.1010000*2^1   = 1.25</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x90 1__0010000 = -0b0.0010000*2^1   = -0.25</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd0 1__1010000 = -0b0.1010000*2^1   = -1.25</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x11 0__0010001 = +0b0.0010001*2^1   = 0.265625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x51 0__1010001 = +0b0.1010001*2^1   = 1.265625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x91 1__0010001 = -0b0.0010001*2^1   = -0.265625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd1 1__1010001 = -0b0.1010001*2^1   = -1.265625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x12 0__0010010 = +0b0.0010010*2^1   = 0.28125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x52 0__1010010 = +0b0.1010010*2^1   = 1.28125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x92 1__0010010 = -0b0.0010010*2^1   = -0.28125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd2 1__1010010 = -0b0.1010010*2^1   = -1.28125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x13 0__0010011 = +0b0.0010011*2^1   = 0.296875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x53 0__1010011 = +0b0.1010011*2^1   = 1.296875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x93 1__0010011 = -0b0.0010011*2^1   = -0.296875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd3 1__1010011 = -0b0.1010011*2^1   = -1.296875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x14 0__0010100 = +0b0.0010100*2^1   = 0.3125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x54 0__1010100 = +0b0.1010100*2^1   = 1.3125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x94 1__0010100 = -0b0.0010100*2^1   = -0.3125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd4 1__1010100 = -0b0.1010100*2^1   = -1.3125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x15 0__0010101 = +0b0.0010101*2^1   = 0.328125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x55 0__1010101 = +0b0.1010101*2^1   = 1.328125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x95 1__0010101 = -0b0.0010101*2^1   = -0.328125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd5 1__1010101 = -0b0.1010101*2^1   = -1.328125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x16 0__0010110 = +0b0.0010110*2^1   = 0.34375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x56 0__1010110 = +0b0.1010110*2^1   = 1.34375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x96 1__0010110 = -0b0.0010110*2^1   = -0.34375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd6 1__1010110 = -0b0.1010110*2^1   = -1.34375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x17 0__0010111 = +0b0.0010111*2^1   = 0.359375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x57 0__1010111 = +0b0.1010111*2^1   = 1.359375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x97 1__0010111 = -0b0.0010111*2^1   = -0.359375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd7 1__1010111 = -0b0.1010111*2^1   = -1.359375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x18 0__0011000 = +0b0.0011000*2^1   = 0.375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x58 0__1011000 = +0b0.1011000*2^1   = 1.375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x98 1__0011000 = -0b0.0011000*2^1   = -0.375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd8 1__1011000 = -0b0.1011000*2^1   = -1.375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x19 0__0011001 = +0b0.0011001*2^1   = 0.390625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x59 0__1011001 = +0b0.1011001*2^1   = 1.390625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x99 1__0011001 = -0b0.0011001*2^1   = -0.390625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xd9 1__1011001 = -0b0.1011001*2^1   = -1.390625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1a 0__0011010 = +0b0.0011010*2^1   = 0.40625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5a 0__1011010 = +0b0.1011010*2^1   = 1.40625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9a 1__0011010 = -0b0.0011010*2^1   = -0.40625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xda 1__1011010 = -0b0.1011010*2^1   = -1.40625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1b 0__0011011 = +0b0.0011011*2^1   = 0.421875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5b 0__1011011 = +0b0.1011011*2^1   = 1.421875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9b 1__0011011 = -0b0.0011011*2^1   = -0.421875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xdb 1__1011011 = -0b0.1011011*2^1   = -1.421875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1c 0__0011100 = +0b0.0011100*2^1   = 0.4375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5c 0__1011100 = +0b0.1011100*2^1   = 1.4375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9c 1__0011100 = -0b0.0011100*2^1   = -0.4375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xdc 1__1011100 = -0b0.1011100*2^1   = -1.4375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1d 0__0011101 = +0b0.0011101*2^1   = 0.453125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5d 0__1011101 = +0b0.1011101*2^1   = 1.453125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9d 1__0011101 = -0b0.0011101*2^1   = -0.453125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xdd 1__1011101 = -0b0.1011101*2^1   = -1.453125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1e 0__0011110 = +0b0.0011110*2^1   = 0.46875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5e 0__1011110 = +0b0.1011110*2^1   = 1.46875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9e 1__0011110 = -0b0.0011110*2^1   = -0.46875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xde 1__1011110 = -0b0.1011110*2^1   = -1.46875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x1f 0__0011111 = +0b0.0011111*2^1   = 0.484375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x5f 0__1011111 = +0b0.1011111*2^1   = 1.484375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x9f 1__0011111 = -0b0.0011111*2^1   = -0.484375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xdf 1__1011111 = -0b0.1011111*2^1   = -1.484375</pre>
+        </td>
+      </tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <tr>
+        <td class="subnormal">
+          <pre>0x20 0__0100000 = +0b0.0100000*2^1   = 0.5</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x60 0__1100000 = +0b0.1100000*2^1   = 1.5</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa0 1__0100000 = -0b0.0100000*2^1   = -0.5</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe0 1__1100000 = -0b0.1100000*2^1   = -1.5</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x21 0__0100001 = +0b0.0100001*2^1   = 0.515625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x61 0__1100001 = +0b0.1100001*2^1   = 1.515625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa1 1__0100001 = -0b0.0100001*2^1   = -0.515625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe1 1__1100001 = -0b0.1100001*2^1   = -1.515625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x22 0__0100010 = +0b0.0100010*2^1   = 0.53125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x62 0__1100010 = +0b0.1100010*2^1   = 1.53125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa2 1__0100010 = -0b0.0100010*2^1   = -0.53125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe2 1__1100010 = -0b0.1100010*2^1   = -1.53125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x23 0__0100011 = +0b0.0100011*2^1   = 0.546875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x63 0__1100011 = +0b0.1100011*2^1   = 1.546875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa3 1__0100011 = -0b0.0100011*2^1   = -0.546875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe3 1__1100011 = -0b0.1100011*2^1   = -1.546875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x24 0__0100100 = +0b0.0100100*2^1   = 0.5625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x64 0__1100100 = +0b0.1100100*2^1   = 1.5625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa4 1__0100100 = -0b0.0100100*2^1   = -0.5625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe4 1__1100100 = -0b0.1100100*2^1   = -1.5625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x25 0__0100101 = +0b0.0100101*2^1   = 0.578125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x65 0__1100101 = +0b0.1100101*2^1   = 1.578125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa5 1__0100101 = -0b0.0100101*2^1   = -0.578125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe5 1__1100101 = -0b0.1100101*2^1   = -1.578125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x26 0__0100110 = +0b0.0100110*2^1   = 0.59375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x66 0__1100110 = +0b0.1100110*2^1   = 1.59375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa6 1__0100110 = -0b0.0100110*2^1   = -0.59375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe6 1__1100110 = -0b0.1100110*2^1   = -1.59375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x27 0__0100111 = +0b0.0100111*2^1   = 0.609375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x67 0__1100111 = +0b0.1100111*2^1   = 1.609375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa7 1__0100111 = -0b0.0100111*2^1   = -0.609375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe7 1__1100111 = -0b0.1100111*2^1   = -1.609375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x28 0__0101000 = +0b0.0101000*2^1   = 0.625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x68 0__1101000 = +0b0.1101000*2^1   = 1.625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa8 1__0101000 = -0b0.0101000*2^1   = -0.625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe8 1__1101000 = -0b0.1101000*2^1   = -1.625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x29 0__0101001 = +0b0.0101001*2^1   = 0.640625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x69 0__1101001 = +0b0.1101001*2^1   = 1.640625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xa9 1__0101001 = -0b0.0101001*2^1   = -0.640625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xe9 1__1101001 = -0b0.1101001*2^1   = -1.640625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2a 0__0101010 = +0b0.0101010*2^1   = 0.65625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6a 0__1101010 = +0b0.1101010*2^1   = 1.65625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xaa 1__0101010 = -0b0.0101010*2^1   = -0.65625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xea 1__1101010 = -0b0.1101010*2^1   = -1.65625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2b 0__0101011 = +0b0.0101011*2^1   = 0.671875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6b 0__1101011 = +0b0.1101011*2^1   = 1.671875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xab 1__0101011 = -0b0.0101011*2^1   = -0.671875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xeb 1__1101011 = -0b0.1101011*2^1   = -1.671875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2c 0__0101100 = +0b0.0101100*2^1   = 0.6875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6c 0__1101100 = +0b0.1101100*2^1   = 1.6875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xac 1__0101100 = -0b0.0101100*2^1   = -0.6875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xec 1__1101100 = -0b0.1101100*2^1   = -1.6875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2d 0__0101101 = +0b0.0101101*2^1   = 0.703125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6d 0__1101101 = +0b0.1101101*2^1   = 1.703125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xad 1__0101101 = -0b0.0101101*2^1   = -0.703125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xed 1__1101101 = -0b0.1101101*2^1   = -1.703125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2e 0__0101110 = +0b0.0101110*2^1   = 0.71875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6e 0__1101110 = +0b0.1101110*2^1   = 1.71875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xae 1__0101110 = -0b0.0101110*2^1   = -0.71875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xee 1__1101110 = -0b0.1101110*2^1   = -1.71875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x2f 0__0101111 = +0b0.0101111*2^1   = 0.734375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x6f 0__1101111 = +0b0.1101111*2^1   = 1.734375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xaf 1__0101111 = -0b0.0101111*2^1   = -0.734375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xef 1__1101111 = -0b0.1101111*2^1   = -1.734375</pre>
+        </td>
+      </tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <tr>
+        <td class="subnormal">
+          <pre>0x30 0__0110000 = +0b0.0110000*2^1   = 0.75</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x70 0__1110000 = +0b0.1110000*2^1   = 1.75</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb0 1__0110000 = -0b0.0110000*2^1   = -0.75</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf0 1__1110000 = -0b0.1110000*2^1   = -1.75</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x31 0__0110001 = +0b0.0110001*2^1   = 0.765625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x71 0__1110001 = +0b0.1110001*2^1   = 1.765625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb1 1__0110001 = -0b0.0110001*2^1   = -0.765625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf1 1__1110001 = -0b0.1110001*2^1   = -1.765625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x32 0__0110010 = +0b0.0110010*2^1   = 0.78125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x72 0__1110010 = +0b0.1110010*2^1   = 1.78125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb2 1__0110010 = -0b0.0110010*2^1   = -0.78125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf2 1__1110010 = -0b0.1110010*2^1   = -1.78125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x33 0__0110011 = +0b0.0110011*2^1   = 0.796875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x73 0__1110011 = +0b0.1110011*2^1   = 1.796875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb3 1__0110011 = -0b0.0110011*2^1   = -0.796875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf3 1__1110011 = -0b0.1110011*2^1   = -1.796875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x34 0__0110100 = +0b0.0110100*2^1   = 0.8125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x74 0__1110100 = +0b0.1110100*2^1   = 1.8125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb4 1__0110100 = -0b0.0110100*2^1   = -0.8125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf4 1__1110100 = -0b0.1110100*2^1   = -1.8125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x35 0__0110101 = +0b0.0110101*2^1   = 0.828125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x75 0__1110101 = +0b0.1110101*2^1   = 1.828125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb5 1__0110101 = -0b0.0110101*2^1   = -0.828125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf5 1__1110101 = -0b0.1110101*2^1   = -1.828125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x36 0__0110110 = +0b0.0110110*2^1   = 0.84375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x76 0__1110110 = +0b0.1110110*2^1   = 1.84375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb6 1__0110110 = -0b0.0110110*2^1   = -0.84375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf6 1__1110110 = -0b0.1110110*2^1   = -1.84375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x37 0__0110111 = +0b0.0110111*2^1   = 0.859375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x77 0__1110111 = +0b0.1110111*2^1   = 1.859375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb7 1__0110111 = -0b0.0110111*2^1   = -0.859375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf7 1__1110111 = -0b0.1110111*2^1   = -1.859375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x38 0__0111000 = +0b0.0111000*2^1   = 0.875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x78 0__1111000 = +0b0.1111000*2^1   = 1.875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb8 1__0111000 = -0b0.0111000*2^1   = -0.875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf8 1__1111000 = -0b0.1111000*2^1   = -1.875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x39 0__0111001 = +0b0.0111001*2^1   = 0.890625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x79 0__1111001 = +0b0.1111001*2^1   = 1.890625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xb9 1__0111001 = -0b0.0111001*2^1   = -0.890625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xf9 1__1111001 = -0b0.1111001*2^1   = -1.890625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3a 0__0111010 = +0b0.0111010*2^1   = 0.90625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x7a 0__1111010 = +0b0.1111010*2^1   = 1.90625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xba 1__0111010 = -0b0.0111010*2^1   = -0.90625</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xfa 1__1111010 = -0b0.1111010*2^1   = -1.90625</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3b 0__0111011 = +0b0.0111011*2^1   = 0.921875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x7b 0__1111011 = +0b0.1111011*2^1   = 1.921875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xbb 1__0111011 = -0b0.0111011*2^1   = -0.921875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xfb 1__1111011 = -0b0.1111011*2^1   = -1.921875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3c 0__0111100 = +0b0.0111100*2^1   = 0.9375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x7c 0__1111100 = +0b0.1111100*2^1   = 1.9375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xbc 1__0111100 = -0b0.0111100*2^1   = -0.9375</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xfc 1__1111100 = -0b0.1111100*2^1   = -1.9375</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3d 0__0111101 = +0b0.0111101*2^1   = 0.953125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x7d 0__1111101 = +0b0.1111101*2^1   = 1.953125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xbd 1__0111101 = -0b0.0111101*2^1   = -0.953125</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xfd 1__1111101 = -0b0.1111101*2^1   = -1.953125</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3e 0__0111110 = +0b0.0111110*2^1   = 0.96875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0x7e 0__1111110 = +0b0.1111110*2^1   = 1.96875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xbe 1__0111110 = -0b0.0111110*2^1   = -0.96875</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xfe 1__1111110 = -0b0.1111110*2^1   = -1.96875</pre>
+        </td>
+      </tr>
+      <tr>
+        <td class="subnormal">
+          <pre>0x3f 0__0111111 = +0b0.0111111*2^1   = 0.984375</pre>
+        </td>
+        <td class="special">
+          <pre>0x7f 0__1111111 = +Inf</pre>
+        </td>
+        <td class="subnormal">
+          <pre>0xbf 1__0111111 = -0b0.0111111*2^1   = -0.984375</pre>
+        </td>
+        <td class="special">
+          <pre>0xff 1__1111111 = -Inf</pre>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
