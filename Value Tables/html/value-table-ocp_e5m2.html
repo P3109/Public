@@ -46,14 +46,14 @@
     <h3>FP8 Value Table, ocp_e5m2</h3>
     <table>
       <tr class="">
-        <td class="subnormal">
+        <td class="normal">
           <pre>0x00 0_00000_00 = 0.0</pre>
         </td>
         <td class="normal">
           <pre>0x40 0_10000_00 = +0b1.00*2^1   = 2.0</pre>
         </td>
-        <td class="subnormal">
-          <pre>0x80 1_00000_00 = Neg0</pre>
+        <td class="special">
+          <pre>0x80 1_00000_00 = -0.0</pre>
         </td>
         <td class="normal">
           <pre>0xc0 1_10000_00 = -0b1.00*2^1   = -2.0</pre>
@@ -890,13 +890,13 @@
           <pre>0x3c 0_01111_00 = +0b1.00*2^0   = 1.0</pre>
         </td>
         <td class="special">
-          <pre>0x7c 0_11111_00 = +Inf</pre>
+          <pre>0x7c 0_11111_00 = inf</pre>
         </td>
         <td class="normal">
           <pre>0xbc 1_01111_00 = -0b1.00*2^0   = -1.0</pre>
         </td>
         <td class="special">
-          <pre>0xfc 1_11111_00 = -Inf</pre>
+          <pre>0xfc 1_11111_00 = -inf</pre>
         </td>
       </tr>
       <tr class="">
@@ -904,13 +904,13 @@
           <pre>0x3d 0_01111_01 = +0b1.01*2^0   = 1.25</pre>
         </td>
         <td class="special">
-          <pre>0x7d 0_11111_01 = NaN</pre>
+          <pre>0x7d 0_11111_01 = nan</pre>
         </td>
         <td class="normal">
           <pre>0xbd 1_01111_01 = -0b1.01*2^0   = -1.25</pre>
         </td>
         <td class="special">
-          <pre>0xfd 1_11111_01 = NaN</pre>
+          <pre>0xfd 1_11111_01 = nan</pre>
         </td>
       </tr>
       <tr class="">
@@ -918,13 +918,13 @@
           <pre>0x3e 0_01111_10 = +0b1.10*2^0   = 1.5</pre>
         </td>
         <td class="special">
-          <pre>0x7e 0_11111_10 = NaN</pre>
+          <pre>0x7e 0_11111_10 = nan</pre>
         </td>
         <td class="normal">
           <pre>0xbe 1_01111_10 = -0b1.10*2^0   = -1.5</pre>
         </td>
         <td class="special">
-          <pre>0xfe 1_11111_10 = NaN</pre>
+          <pre>0xfe 1_11111_10 = nan</pre>
         </td>
       </tr>
       <tr class="">
@@ -932,13 +932,13 @@
           <pre>0x3f 0_01111_11 = +0b1.11*2^0   = 1.75</pre>
         </td>
         <td class="special">
-          <pre>0x7f 0_11111_11 = NaN</pre>
+          <pre>0x7f 0_11111_11 = nan</pre>
         </td>
         <td class="normal">
           <pre>0xbf 1_01111_11 = -0b1.11*2^0   = -1.75</pre>
         </td>
         <td class="special">
-          <pre>0xff 1_11111_11 = NaN</pre>
+          <pre>0xff 1_11111_11 = nan</pre>
         </td>
       </tr>
     </table>
