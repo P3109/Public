@@ -9,4 +9,4 @@ This repository contains an Interim Report prepared on behalf of the P3109 membe
 
 The content is an unapproved draft of elements that may become used in a proposed IEEE Standard. As such, the material subject to change. USE AT YOUR OWN RISK! In particular, the content must not be utilized for any conformance/compliance purposes.
 
-You may use the GitHub ["Issues"](https://github.com/P3109/Public/issues) facility for notes, questions, suggestions.
+You may use [GitHub issues here](https://github.com/P3109/Public/issues) for notes, questions, and suggestions.
