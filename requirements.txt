@@ -1,0 +1,4 @@
+numpy
+ipython
+airium
+pandas
