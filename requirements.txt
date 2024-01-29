@@ -1,0 +1,8 @@
+numpy
+pandas
+ pyarrow
+ jinja2
+airium
+ipython
+ipytest
+ipykernel
