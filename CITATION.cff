@@ -1,5 +1,2 @@
 cff-version: 1.2.0
 message: "If you use CFF in your research, please cite it using these metadata."
-title: "Interim Report on Binary Floating-point Formats for Machine Learning"
-version: "0.9.0"
-date-released: "2024-10-29"
