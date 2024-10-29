@@ -11,7 +11,7 @@ identifiers:
   - type: url
     value: >-
       https://github.com/P3109/Public/blob/main/Shared%20Reports/IEEE%20WG%20P3109%20Interim%20Report.pdf
-  - type: date-released
+date-released:
     value: >- 2024-10-29
-  - type: version
+version:
     value: >- 0.9.0
