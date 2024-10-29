@@ -3,7 +3,7 @@ message: If you use this software, please cite it as below.
 authors:
   - name: IEEE SA P3109 Working Group
 title: Interim Report on Binary Floating-point Formats for Machine Learning
-copyright: "© 2024 by The Institute of Electrical and Electronics Engineers, Inc."
 version: 0.9.1
 date-released: 2024-10-29
+copyright: "© 2024 by The Institute of Electrical and Electronics Engineers, Inc."
 url: "https://github.com/P3109/Public/blob/main/Shared%20Reports/IEEE%20WG%20P3109%20Interim%20Report.pdf"
