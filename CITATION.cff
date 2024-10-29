@@ -1,17 +1,8 @@
-cff-version: 1.2.0
-title: >-
-  "Interim Report on Binary Floating-point Formats for
-  Machine Learning"
-message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+cff-version: 1.2
+message: If you use this software, please cite it using these metadata.
+title: 'Interim Report on Binary Floating-point Formats for Machine Learning'
 authors:
-  - name: IEEE SA P3109 Working Group
-identifiers:
-  - type: url
-    value: >-
-      https://github.com/P3109/Public/blob/main/Shared%20Reports/IEEE%20WG%20P3109%20Interim%20Report.pdf
-date-released:
-    value: >- "2024-10-29"
-version:
-    value: >- "0.9.0"
+- affiliation: "IEEE SA P3109 Working Group"
+version: 0.9.0
+date-released: 2024-10-29
+repository-report: "https://github.com/P3109/Public/blob/main/Shared%20Reports/IEEE%20WG%20P3109%20Interim%20Report.pdf"
