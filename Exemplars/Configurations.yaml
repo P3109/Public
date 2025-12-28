@@ -1,26 +1,26 @@
 metadata:
   - conformance: IEEE SA P3109
     version: "3.2.0"  
-  - provider: Ultra Computing
-    website: "https://ultracomputing.com"
-    contact: cto@ultracomputing.com
-    uri: "https://ultracomputing.com/P3109/configurations.yaml"
+  - provider: Implementor
+    website: "https://implementor_site"
+    contact: info@implementor_site
+    uri: "https://implementor_site/P3109/configurations.yaml"
     version: "1.0"
   - reference: 
-    uri: "https://github.com/P3109/Public/StandardOperations.yaml"
+    uri: "https://github.com/P3109/Public/StandardOperations.yaml
     version: "0.1"
   - implementation:
         Configurations:
-            uri: "https://github.com/P3109/Public/blob/main/Exemplars/Configurations.yaml"
+            uri: "https://implementor_site/P3109//Configurations.yaml"
             version: "1.0"
         Profiles:
-            uri: "https://ultracomputing.com/P3109/Profiles.yaml"
+            uri: "https://implementor_site/P3109/Profiles.yaml"
             version: "1.0"
         Kappas:
-            uri: "https://ultracomputing.com/P3109/Kappas.yaml"
+            uri: "https://implementor_site/P3109/Kappas.yaml"
             version: "1.0"
         Constraints:
-            uri: "https://ultracomputing.com/P3109/Constraints.yaml"
+            uri: "https://implementor_site/P3109/Constraints.yaml"
             version: "1.0"
 
 Core32:
@@ -60,7 +60,7 @@ Core64:
              - notes:
                 - description: "xoroshiro128++ using top 16 bits."
                 - reference_implementation:
-                    http://ultracomputing.com/P3109/Stochastic/Xoshiro128plusplus.c
+                    http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c
       - SaturationModes:
           - OvfInf
           - SatPropagate
@@ -96,7 +96,7 @@ Full:
               - notes:
                 - description: "xoroshiro128++ using top 16 of 32 bits"
                 - reference_implementation:
-                    "http://ultracomputing.com/P3109/Stochastic/Xoshiro128plusplus.c"
+                    "http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c"
       - SaturationModes:
         - OvfInf
         - SatPropagate
