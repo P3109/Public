@@ -1,0 +1,35 @@
+metadata:
+  - conformance: IEEE SA P3109
+    version: "3.2.0"
+  - provider: Implementor
+    website: "https://implementor_site"
+    contact: info@implementor_site
+    uri: "https://implementor_site/P3109/constraints.yaml"
+    version: "1.0"
+  - implementation:
+    Configurations:
+      uri: "https://implementor_site/P3109//Configurations.yaml"
+      version: "1.0"
+
+Core32:
+  - Add{fx,fy,fr}: [ "(fx==fy && fy==fr)" ]
+  - Multiply{fx,fy,fr}: [
+      "(fx==fy)", "(Precision(fr) >= Precision(fx))", "(Bitwidth(fr) >= Bitwidth(fx))"]
+  - ToOdd{fx,fr}: [
+      "(Bitwidth(fr) >= 2+Bitwidth(fx))", "(Precision(fr) >= 2+Precision(fx))" ]
+  - SqrtFast{fx,fr,π}: [
+      ["(fx is Binary8p3se)", "(fr in {Binary8p3se, Binary8p4se})"]
+    ]
+
+Core64:
+  - Add{fx,fy,fr,π}: [
+      ["(fx==fy)", "(Precision(fr) >= Precision(fx))", "(ExponentBits(fr) >= ExponentBits(fx))"],
+      ["([fx,fy] in {Binary8p3se, Binary8p4se})", "(fr is Binary10p6se)"]]
+
+Full:
+  - FMA{fx,fy,fz,fr,π}: [
+        ["(fx==fy)", "(fz==fr)", "(Precision(fr) >= Precision(fx))", "(Bitwidth(fr) >= Bitwidth(fx))"]]
+  - Add{fx,fy,fr,π}: [
+        ["(fx==fy)", "(Precision(fr) >= Precision(fx))", "(ExponentBits(fr) >= ExponentBits(fx))"],
+        ["([fx,fy] in {Binary8p3se, Binary8p4se})", "(fr in {Binary8p3se, Binary10p6se})"]]
+    
