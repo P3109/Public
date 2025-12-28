@@ -11,7 +11,7 @@ metadata:
     version: "0.1"
   - implementation:
         Configurations:
-            uri: "https://github.com/P3109/Public/new/main/Exemplars/Configurations.yaml"
+            uri: "https://github.com/P3109/Public/blob/main/Exemplars/Configurations.yaml"
             version: "1.0"
         Profiles:
             uri: "https://ultracomputing.com/P3109/Profiles.yaml"
