@@ -6,7 +6,7 @@ metadata:
   - provider: Implementor
     website: "https://implementor_site"
     contact: info@implementor_site
-    uri: "https://implementor_site/P3109/constraints.yaml"
+    uri: "https://implementor_site/P3109/Constraints.yaml"
     version: "1.0"
   - implementation:
     Configurations:
