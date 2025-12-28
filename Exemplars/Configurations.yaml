@@ -6,7 +6,7 @@ metadata:
   - provider: Implementor
     website: "https://implementor_site"
     contact: info@implementor_site
-    uri: "https://implementor_site/P3109/configurations.yaml"
+    uri: "https://implementor_site/P3109/Configurations.yaml"
     version: "1.0"
   - reference: 
     uri: "https://github.com/P3109/Public/StandardOperations.yaml
