@@ -1,0 +1,108 @@
+metadata:
+  - conformance: IEEE SA P3109
+    version: "3.2.0"  
+  - provider: Ultra Computing
+    website: "https://ultracomputing.com"
+    contact: cto@ultracomputing.com
+    uri: "https://ultracomputing.com/P3109/configurations.yaml"
+    version: "1.0"
+  - reference: 
+    uri: "https://github.com/P3109/Public/StandardOperations.yaml"
+    version: "0.1"
+  - implementation:
+        Configurations:
+            uri: "https://github.com/P3109/Public/new/main/Exemplars/Configurations.yaml"
+            version: "1.0"
+        Profiles:
+            uri: "https://ultracomputing.com/P3109/Profiles.yaml"
+            version: "1.0"
+        Kappas:
+            uri: "https://ultracomputing.com/P3109/Kappas.yaml"
+            version: "1.0"
+        Constraints:
+            uri: "https://ultracomputing.com/P3109/Constraints.yaml"
+            version: "1.0"
+
+Core32:
+  - CoreOperations:
+      - IEEE754_format: binary32
+      - StochasticRounding:
+        - StochasticB:
+            - bits: "(Minimum(Precision, 16))"
+  - BlockSizes (B):
+      - core:
+          - elements: 32
+      - accelerated:
+          - elements: 64
+      - supported:
+          - elements: "(2^i for i=2..22)"
+
+Core64:
+  - CoreOperations:
+      - IEEE754_format: binary64
+    BlockSizes (B):
+      - core:
+          - elements: [16, 32]
+      - accelerated:
+          - elements: [64]
+      - supported:
+          - elements: "(2^i for i=4..24)"
+          - elements: [24, 48]
+  - Projections:
+      - RoundingModes:
+          - deterministic:
+              - NearestTiesToEven
+              - TowardNegative
+              - TowardPositive
+          - stochastic:
+             - StochasticB:
+                - bits: "(Minimum(Precision, 16))"  #needs same input and output
+             - notes:
+                - description: "xoroshiro128++ using top 16 bits."
+                - reference_implementation:
+                    http://ultracomputing.com/P3109/Stochastic/Xoshiro128plusplus.c
+      - SaturationModes:
+          - OvfInf
+          - SatPropagate
+  - KappaApproximate:
+    - SqrtFast
+
+Full:
+  - CoreOperations:
+      - IEEE754_formats: [binary32, binary64]
+  - BlockSizes (B):
+      - core:
+          - elements: [32, 64]
+      - accelerated:
+          - elements: [128, 256]
+      - supported:
+          - elements: "(2^i for i=4..31)"
+  - Projections:
+      - RoundingModes:
+          - deterministic:
+              - NearestTiesToEven
+              - NearestTiesToAway
+              - TowardNegative
+              - TowardPositive
+              - TowardZero
+              - ToOdd
+          - stochastic:
+              - StochasticA:
+                - bits: "(Precision)"
+                - randbits: "(16)"
+              - StochasticC:
+                - bits: "(Precision)"
+                - randbits: "(Maximum(Precision, 16))"
+              - notes:
+                - description: "xoroshiro128++ using top 16 of 32 bits"
+                - reference_implementation:
+                    "http://ultracomputing.com/P3109/Stochastic/Xoshiro128plusplus.c"
+      - SaturationModes:
+        - OvfInf
+        - SatPropagate
+        - SatFinite
+  - KappaApproximate:
+    - SqrtFast
+    - SinFast
+    - ExpFast
+
