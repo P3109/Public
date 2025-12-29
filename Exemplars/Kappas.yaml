@@ -1,5 +1,5 @@
 # κ-approximate Function Descriptions (examples)
-# Last Updated: 2025-12-28
+# Last Updated: 2025-12-29
 metadata:
   - conformance: "IEEE SA P3109 Interim Report"
     version: "3.2.0"
@@ -35,19 +35,16 @@ SinFast:
   Projections:
     RoundingModes: ["NearestTiesToEven", "ToZero"]
     SaturationModes: ["OvfInf"]
-  AlgorithmicNotes:
-    "CORDIC algorithm with adaptive iteration count based on input range"
+  AlgorithmicNotes: "CORDIC algorithm with adaptive iteration count based on input range"
   Verification:
     method: "formal proof"
-    notes:
-      "Mathematical proof of maximum error bound using Coq.
-       Files available at https://implementor_site/P3109/Kappas/SinFast.coq"
+    notes: "Mathematical proof of maximum error bound using Coq. Files available at https://implementor_site/P3109/Kappas/SinFast.coq"
     reference_implementation: "https://github.com/implementor_sitge/P3109/Kappas/SinFast.ocaml"
 
 ExpFast:
   # first approximation signature
   - Approximates: "Exp{Binary8p3se, Binary8p3se, Π}"
-    With: 
+    With:
       - "Rnd{Π} ∈ {ToOdd, StochasticA}"
       - "Sat{Π} = SatPropagate"
     Kappa:
@@ -61,9 +58,9 @@ ExpFast:
       method: "statistical"
       notes: "10 million random samples per range, all special cases verified"
       reference_implementation: "https://github.com/implementor_site/P3109/Kappas/ExpFast.jl"
-  # second approximation signature 
+  # second approximation signature
   - Approximates: "Exp{Binary8p3se, Binary8p4se, Π}"
-    With: 
+    With:
       - "Rnd{Π} ∈ {ToOdd, StochasticA[bits:16]}"
       - "Sat{Π} = SatPropagate"
     Kappa:
