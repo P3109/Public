@@ -1,43 +1,43 @@
 # Implemented Configuration (examples)
-# last updated 2025-12-28
+# last updated 2025-12-29
 metadata:
   - conformance: IEEE SA P3109
-    version: "3.2.0"  
+    version: "3.2.0"
   - provider: Implementor
     website: "https://implementor_site"
     contact: info@implementor_site
     uri: "https://implementor_site/P3109/Configurations.yaml"
     version: "1.0"
-  - reference: 
+  - reference:
     uri: "https://github.com/P3109/Public/StandardOperations.yaml"
     version: "0.1"
   - implementation:
-        Configurations:
-            uri: "https://implementor_site/P3109//Configurations.yaml"
-            version: "1.0"
-        Profiles:
-            uri: "https://implementor_site/P3109/Profiles.yaml"
-            version: "1.0"
-        Kappas:
-            uri: "https://implementor_site/P3109/Kappas.yaml"
-            version: "1.0"
-        Constraints:
-            uri: "https://implementor_site/P3109/Constraints.yaml"
-            version: "1.0"
+      Configurations:
+        uri: "https://implementor_site/P3109//Configurations.yaml"
+        version: "1.0"
+      Profiles:
+        uri: "https://implementor_site/P3109/Profiles.yaml"
+        version: "1.0"
+      Kappas:
+        uri: "https://implementor_site/P3109/Kappas.yaml"
+        version: "1.0"
+      Constraints:
+        uri: "https://implementor_site/P3109/Constraints.yaml"
+        version: "1.0"
 
 Core32:
   - CoreOperations:
       - IEEE754_format: binary32
       - StochasticRounding:
-        - StochasticB:
-            - bits: "(Minimum(Precision, 16))"
+          - StochasticB:
+              - bits: '(Minimum(Precision, 16))'
   - BlockSizes (B):
       - core:
           - elements: 32
       - accelerated:
           - elements: 64
       - supported:
-          - elements: "(2^i for i=2..22)"
+          - elements: '(2^i for i=2..22)'
 
 Core64:
   - CoreOperations:
@@ -57,17 +57,16 @@ Core64:
               - TowardNegative
               - TowardPositive
           - stochastic:
-             - StochasticB:
-                - bits: "(Minimum(Precision, 16))"  #needs same input and output
-             - notes:
-                - description: "xoroshiro128++ using top 16 bits."
-                - reference_implementation:
-                    http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c
+              - StochasticB:
+                  - bits: "(Minimum(Precision, 16))"  #needs same input and output
+              - notes:
+                  - description: "xoroshiro128++ using top 16 bits."
+                  - reference_implementation: http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c
       - SaturationModes:
           - OvfInf
           - SatPropagate
   - KappaApproximate:
-    - SqrtFast
+      - SqrtFast
 
 Full:
   - CoreOperations:
@@ -90,21 +89,20 @@ Full:
               - ToOdd
           - stochastic:
               - StochasticA:
-                - bits: "(Precision)"
-                - randbits: "(16)"
+                  - bits: "(Precision)"
+                  - randbits: "(16)"
               - StochasticC:
-                - bits: "(Precision)"
-                - randbits: "(Maximum(Precision, 16))"
+                  - bits: "(Precision)"
+                  - randbits: "(Maximum(Precision, 16))"
               - notes:
-                - description: "xoroshiro128++ using top 16 of 32 bits"
-                - reference_implementation:
-                    "http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c"
+                  - description: "xoroshiro128++ using top 16 of 32 bits"
+                  - reference_implementation: "http://implementor_site/P3109/Stochastic/Xoshiro128plusplus.c"
       - SaturationModes:
-        - OvfInf
-        - SatPropagate
-        - SatFinite
+          - OvfInf
+          - SatPropagate
+          - SatFinite
   - KappaApproximate:
-    - SqrtFast
-    - SinFast
-    - ExpFast
+      - SqrtFast
+      - SinFast
+      - ExpFast
 
