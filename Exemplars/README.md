@@ -1,9 +1,9 @@
 
 # Specifying Implementations
 
-version 0.3.1, 2025-12-29 
+version 0.3.2, 2025-12-29 
 
-*this is a work-in-progress, many of the links are placeholders*
+*this is work-in-progress material*
 
 [§3]:  see section 3 of the Interim Report[^1]
 
