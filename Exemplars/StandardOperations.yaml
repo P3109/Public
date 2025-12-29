@@ -1,14 +1,13 @@
-Metadata:
-  description:
-    "P3109 Categories and operation groups"
+metadata:
+  description: "P3109 Categories and operation groups"
   reference:
     name: "P3109 Interim Report"
-    version: "3.12"
+    version: "3.2.0"
     url: "https://github.com/P3109/Public"
-  source: 
+  source:
     uri: "https://github.com/P3109/Public/StandardOperations.yaml"
     version: "0.1"
-  
+
 Classification:
   predicates:
     - IsZero
@@ -63,11 +62,11 @@ Projection:
     - TowardZero
     - ToOdd
     - StochasticA:
-      - bits : "(expression)"
+        - bits: "(expression)"
     - StochasticB:
-      - bits : "(expression)"
+        - bits: "(expression)"
     - StochasticC:
-      - bits : "(expression)"
+        - bits: "(expression)"
   saturation:
     - OvfInf
     - SatFinite
@@ -193,11 +192,10 @@ Conversion:
     - Convert
   IEEE754:
     - ConvertToIEEE754:
-      - formats : [oneof: ["binary32", "binary64", ["binary32", "binary64"]]]
+        - formats: [{oneof: ["binary32", "binary64", ["binary32", "binary64"]]}]
     - ConvertFromIEEE754:
-      - formats : [oneof: ["binary32", "binary64", ["binary32", "binary64"]]]
-    - note:
-          "The format[s] in ConvertToIEEE754 and ConvertFromIEEE754 shall be the same."
+        - formats: [{oneof: ["binary32", "binary64", ["binary32", "binary64"]]}]
+    - note: "The format[s] in ConvertToIEEE754 and ConvertFromIEEE754 shall be the same."
 Format:
   defining:
     - BitwidthOf
