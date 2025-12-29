@@ -14,20 +14,20 @@ A conforming implementation supports one or more formats [§3,3.1]. While the st
 
 ## YAML text files
 
-YAML[^2] files are used to describe an implementation. This is a modern format, with the benefit of being easily read by human and by machine. YAML is in wide use, and readily interconverts with JSON. A catalog of operations is provided by the working group[^3]. Every implementation provides at least two files: [**Configurations.yaml**](#configurations)[^4] that details each supported configuration, and [**Profiles.yaml**](#profiles)[^5] that associates formats with the configurations they cover.
+YAML[^2] files are used to describe an implementation. This is a widely used, modern format; it is easily read by humans and easily parsed by software. YAML supports JSON schemas[^3], and, with few restrictions, interconverts with JSON. 
 
-An implementation that supports any κ-approximate functions[§4.6] shall provide [**Kappas.yaml**](#kappas)[^6] as described below. An implementation that uses constraints on argument formats for one or more operations shall provide [**Constraints.yaml**](#constraints)[^7] as described below.
+Every implementation provides at least two files: [**Configurations.yaml**](#configurations)[^4] that details each supported configuration, and [**Profiles.yaml**](#profiles)[^5] that associates formats with the configurations they cover. An implementation that supports any κ-approximate functions[§4.6] shall provide [**Kappas.yaml**](#kappas)[^6] as described below. An implementation that uses constraints on argument formats for one or more operations shall provide [**Constraints.yaml**](#constraints)[^7] as described below.
 
 Each file begins with metadata. Examples are provided in the sample files.
 
 ## StandardOperations
 
-**StandardOperations.yaml** is a catalog of user-level (client) operations, functions, and identifiers specified [§4,5,6]. The outermost level holds metadata and operator categories.  These are the categories:
+[**StandardOperations.yaml**](#standardops)[^8] is a catalog of user-level (client) operations, functions, and identifiers specified [§4,5,6]. The outermost level holds metadata and operator categories.  These are the categories:
 ```
 Classification, Comparison, Projection, Extrema, Math, Block, Conversion, Format
 ```
 
-The next level identifies groups of related operations.  Here are the groups, with subgroups given `group ∋ (subgroup, ...)`.
+The next level identifies groups of related operations.  Here are the groups and their subgroups.
 
 ```
 Classification:
@@ -62,11 +62,9 @@ Format:
 - Some entries require an attribute be given (e.g. a P3109 format). Attributes are introduced with a meaningful label e.g. **bits**.
 - Some entries have notes giving additional information. Notes are introduced with  the label **note**.
 
-See StandardOperations.yaml[^4] as provided.
-
 ## Configurations
 
-**Configurations.yaml** holds one or more configurations. A configuration provides a named suite of supported operations. Every configuration shall specify:
+**Configurations.yaml**[^4] holds one or more configurations. A configuration provides a named suite of supported operations. Every configuration shall specify:
 
  - at least one of these two IEEE 754 formats: `binary32` or `binary64`.
 
@@ -100,28 +98,20 @@ All attribute values shall be present.
 
 Notes may be adjoined using the label **note** in the usual way.
 
-See Configurations.yaml[^5] for examples.
-
 ## Profiles
 
-**Profiles.yaml** holds one or more profiles. A profile associates one or more P3109 formats with one and only one configuration.
-
-See Profiles.yaml[^6] example.
+**Profiles.yaml**[^5] holds one or more profiles. A profile associates one or more P3109 formats with one and only one configuration.
 
 ## Kappas
 
-Kappa.yaml holds one or more kappa-approximate specifications. A kappa-approximate specification provides a uniquely named function with attributes.
+**Kappas.yaml**[^6] holds one or more kappa-approximate specifications. A kappa-approximate specification provides a uniquely named function with attributes.
 Notes may be adjoined using the label **note** in the usual way.  
-
-See Kappas.yaml[^7] example.
 
 - *This file may be omitted only if the implementation does not provide kappa-approximate functions.*
 
 ## Constraints
 
-**Constraints.yaml** holds one or more specializations. A specialization constrains one or more function parameters. Each specialization may associate with one or more of the given profiles. 
-
-See Constraints.yaml[^8] example.
+**Constraints.yaml**[^7] holds one or more specializations. A specialization constrains one or more function parameters. Each specialization may associate with one or more of the given profiles. 
 
 *This file may be omitted only if there are no profiles that use constraints on parameters or their formats.*
 
@@ -129,8 +119,9 @@ See Constraints.yaml[^8] example.
 
 [^1]: [Interim Report](https://github.com/P3109/Public/blob/main/IEEE%20WG%20P3109%20Interim%20Report%20(latest).pdf)
 [^2]: ["YAML Standard"](https://yaml.org/spec/1.2.2/)
-[^3]: [StandardOperations](https://github.com/P3109/Public/blob/main/Exemplars/StandardOperations.yaml)
+[^3]: ["JSON Schema"](https://json-schema.org/draft/2020-12)
 [^4]: [Configurations](https://github.com/P3109/Public/blob/main/Exemplars/Configurations.yaml)
 [^5]: [Profiles](https://github.com/P3109/Public/blob/main/Exemplars/Profiles.yaml)
 [^6]: [Kappas](https://github.com/P3109/Public/blob/main/Exemplars/Kappas.yaml)
 [^7]: [Constraints](https://github.com/P3109/Public/blob/main/Exemplars/Constraints.yaml)
+[^8]: [StandardOperations](https://github.com/P3109/Public/blob/main/Exemplars/StandardOperations.yaml)
