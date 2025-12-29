@@ -9,7 +9,7 @@ metadata:
     uri: "https://implementor_site/P3109/Configurations.yaml"
     version: "1.0"
   - reference: 
-    uri: "https://github.com/P3109/Public/StandardOperations.yaml
+    uri: "https://github.com/P3109/Public/StandardOperations.yaml"
     version: "0.1"
   - implementation:
         Configurations:
