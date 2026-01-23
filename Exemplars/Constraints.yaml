@@ -1,29 +1,42 @@
-# Function Constraints (examples)
-# last updated 2025-12-29
-metadata:
-  - conformance: IEEE SA P3109
-    version: "3.2.0"
-  - provider: Implementor
-    website: "https://implementor_site"
-    contact: info@implementor_site
-    uri: "https://implementor_site/P3109/Constraints.yaml"
-    version: "1.0"
-  - implementation:
-    Configurations:
-      uri: "https://implementor_site/P3109//Configurations.yaml"
-      version: "1.0"
+Metadata:
+  conformance: IEEE SA P3109
+  version: 3.2.0
+  provider: Provider
+  contact:
+    email: info@implementer.site
+    uri: https://implementer.site"
+  implementation:
+    name: release name
+    version: 1.0.0
+    date: 2026-01-23T00:58Z
+    uri: https://implementer.site/P3109/Implementation/v1.0.0/Constraints.yaml
 
 Core32:
-  - Add{fx,fy,fr}: ["(fx==fy && fy==fr)"]
-  - Multiply{fx,fy,fr}: ["(fx==fy)", "(Precision(fr) >= Precision(fx))", "(Bitwidth(fr) >= Bitwidth(fx))"]
-  - ToOdd{fx,fr}: ["(Bitwidth(fr) >= 2+Bitwidth(fx))", "(Precision(fr) >= 2+Precision(fx))"]
-  - SqrtFast{fx,fr,π}: [["(fx is Binary8p3se)", "(fr in {Binary8p3se, Binary8p4se})"]]
+  - Add(fx, fy, fr, ρ):
+      - ( fx == fy )
+      - ( BitwidthOf(fr) >= BitwidthOf(fx) )
+      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
+      - ρ:
+          - ( ToNearestTiesToEven, OvfInf )
+          - ( ToNearestTiesToEven, SatFinite )
+  - SqrtFast(fx, fr, ρ):
+      - ( fx in {Binary8p3se, Binary8p4se} )
+      - ( fr in {Binary8p3se, Binary8p4se} )
+      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
+      - ρ:
+          - ( ToNearestTiesToEven, SatFinite )
+          - ( TowardZero, SatFinite )
 
 Core64:
-  - Add{fx,fy,fr,π}: [["(fx==fy)", "(Precision(fr) >= Precision(fx))", "(ExponentBits(fr) >= ExponentBits(fx))"], ["([fx,fy] in {Binary8p3se, Binary8p4se})", "(fr is Binary10p6se)"]]
-
-Full:
-  - FMA{fx,fy,fz,fr,π}: [["(fx==fy)", "(fz==fr)", "(Precision(fr) >= Precision(fx))", "(Bitwidth(fr) >= Bitwidth(fx))"]]
-  - Add{fx,fy,fr,π}: [["(fx==fy)", "(Precision(fr) >= Precision(fx))", "(ExponentBits(fr) >= ExponentBits(fx))"], ["([fx,fy] in {Binary8p3se, Binary8p4se})", "(fr in {Binary8p3se, Binary10p6se})"]]
-
-
+  - Add(fx, fy, fr, ρ):
+      - ( fx == fy )
+      - ( fx in {Binary8p3se, Binary8p4se} )
+      - ( fr in {Binary10p6se} )
+  - FMA(fx, fy, fz, fr, ρ):
+      - ( fx == fy )
+      - ( fz == fr )
+      - ( BitwidthOf(fr) >= BitwidthOf(fx) )
+      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
+      - ρ:
+          - ( ToNearestTiesToEven, OvfInf )
+          - ( ToNearestTiesToEven, SatFinite )

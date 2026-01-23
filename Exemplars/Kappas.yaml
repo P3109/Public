@@ -1,77 +1,72 @@
-# κ-approximate Function Descriptions (examples)
-# Last Updated: 2025-12-29
-metadata:
-  - conformance: "IEEE SA P3109 Interim Report"
-    version: "3.2.0"
-  - provider: Implementor
-    website: "https://implementor_site"
-    contact: info@implementor_site
-    uri: "https://implementor_site/P3109/Kappas.yaml"
-    version: "1.0"
-  - implementation:
-    Configurations:
-      uri: "https://implementor_site/P3109//Configurations.yaml"
-      version: "1.0"
+---
+Metadata:
+  conformance: "IEEE SA P3109"
+  version: "3.2.0"
+  provider: "Provider"
+  contact:
+    email: "info@implementer.site"
+    uri: https://implementer.site"
+  implementation:
+    name: "release name"
+    version: "1.0.0"
+    date: 2026-01-23T00:53Z
+    uri: https://implementer.site/P3109/Implementation/v1.0.0/Kappas.yaml
 
 SqrtFast:
   Approximates: "Sqrt"
   Kappa:
-    - interval: "([-Inf, Inf])"
-      kappa: 2
+    - interval: ( [>=(-Inf), <=(Inf)] )
+      kappa: 1
   Projections:
-    - RoundingModes: ["NearestTiesToEven"]
-    - SaturationModes: ["OvfInf", "SatPropagate"]
-  note:
-    method: "exhaustive testing for all supported formats"
-    reference_implementation: "https://implementor_sigte/P3109/Kappas/SqrtFast.c"
+    Rounding:
+      - "NearestTiesToEven"
+      - "TowardZero"
+    Saturation:
+      - SatFinite
+  Verification: "Exhaustive testing performed for all supported formats."
+  Function:
+    uri: https://implementer.site/P3109/Kappas/SqrtFast.c
 
-SinFast:
-  Approximates: "Sin"
-  Kappa:
-    - interval: "([-π, π])"
-      kappa: 2
-    - intervals: "((-Inf, -π), (π, Inf))"
-      kappa: 4
-  Projections:
-    RoundingModes: ["NearestTiesToEven", "ToZero"]
-    SaturationModes: ["OvfInf"]
-  AlgorithmicNotes: "CORDIC algorithm with adaptive iteration count based on input range"
-  Verification:
-    method: "formal proof"
-    notes: "Mathematical proof of maximum error bound using Coq. Files available at https://implementor_site/P3109/Kappas/SinFast.coq"
-    reference_implementation: "https://github.com/implementor_sitge/P3109/Kappas/SinFast.ocaml"
+ExpFast1:
+  - Approximates: "Exp{Binary8p3se, Binary8p3se, ρ}"
+  - Kappa:
+    - interval: ( [>=(-Inf), <(0)] )
+      kappa: 1
+    - interval: ( [>=(0), <=(1)] )
+      kappa: 0
+    - interval: ( [>(1), <=(Inf)] )
+      kappa: 1
+  - Projections:
+    Rounding:
+      - ToOdd
+      - StochasticA:
+        bits: 4
+    Saturation:
+      - SatPropagate
+  - Verification:
+    method: "statistical"
+    note: "10 million random samples per range, all special cases verified"
+  - Function:
+      uri: https://implementer.site/P3109/Kappas/ExpFasts.jl"
 
-ExpFast:
-  # first approximation signature
-  - Approximates: "Exp{Binary8p3se, Binary8p3se, Π}"
-    With:
-      - "Rnd{Π} ∈ {ToOdd, StochasticA}"
-      - "Sat{Π} = SatPropagate"
-    Kappa:
-      - interval: "([-1, 1])"
-        kappa: 0
-      - intervals: "([-10, -1), (1, 12])"
-        kappa: 1
-      - intervals: "((-Inf, -10), (12, Inf))"
-        kappa: 2
-    Verification:
-      method: "statistical"
-      notes: "10 million random samples per range, all special cases verified"
-      reference_implementation: "https://github.com/implementor_site/P3109/Kappas/ExpFast.jl"
-  # second approximation signature
-  - Approximates: "Exp{Binary8p3se, Binary8p4se, Π}"
-    With:
-      - "Rnd{Π} ∈ {ToOdd, StochasticA[bits:16]}"
-      - "Sat{Π} = SatPropagate"
-    Kappa:
-      - interval: "([-1, 1])"
-        kappa: 0
-      - intervals: "([-11, -1), (1, 13])"
-        kappa: 2
-      - intervals: "((-Inf, -11), (13, Inf))"
-        kappa: 3
-    Verification:
-      method: "statistical"
-      notes: "10 million random samples per range, all special cases verified"
-      reference_implementation: "https://github.com/implementor_site/P3109/Kappas/ExpFast.jl"
-
+ExpFast2:
+  - Approximates: "Exp{Binary8p3se, Binary8p4se, ρ}"
+  - Kappa:
+    - interval: ( [>=(-Inf), <(-1)] )
+      kappa: 1
+    - interval: ( [>=(-1), <=(1)] )
+      kappa: 0
+    - interval: ( [>(1), <(Inf)] )
+      kappa: 1
+  - Projections:
+    Rounding:
+      - ToOdd
+      - StochasticA:
+        bits: 8
+    Saturation:
+      - SatPropagate
+  - Verification:
+    method: "statistical"
+    note: "10 million random samples per range, all special cases verified"
+  - Function:
+      uri: https://implementer.site/P3109/Kappas/ExpFasts.jl"

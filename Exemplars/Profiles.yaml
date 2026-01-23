@@ -1,22 +1,21 @@
-# Configuration Profiles (examples)
-# Last Updated: 2025-12-29
-metadata:
-  - conformance: "IEEE SA P3109 Interim Report"
-    version: "3.2.0"
-  - provider: Implementor
-    website: "https://implementor_site"
-    contact: info@implementor_site
-    uri: "https://implementor_site/P3109/Profiles.yaml"
-    version: "1.0"
-  - implementation:
-    Configurations:
-      uri: "https://implementor_site/P3109//Configurations.yaml"
-      version: "1.0"
-
-Profiles:
-  - formats: [Binary8p3se, Binary8p4se]
-    configuration: Core32
-  - formats: ["Binary4p{1,2,3}sf", "Binary8p{2,3}se"]
-    configuration: Core64
-  - formats: [Binary8p3se, Binary8p4se, Binary10p6se]
-    configuration: Full
+---
+Metadata:
+  conformance: IEEE SA P3109
+  version: 3.2.0
+  provider: Provider
+  contact:
+    email: info@implementer.site
+    uri: https://implementer.site"
+  implementation:
+    name: release name
+    version: 1.0.0
+    date: 2026-01-23T00:53Z
+    uri: https://implementer.site/P3109/Implementation/v1.0.0/Profiles.yaml
+Core32:
+  formats:
+    - Binary8p3se
+    - Binary8p4se
+Core64:
+  formats:
+    - ( Binary4p$(i)sf for i in [1..3] )
+    - ( Binary8p$(i)se for i in [3, 4] )
