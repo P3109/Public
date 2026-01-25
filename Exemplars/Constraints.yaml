@@ -1,42 +1,44 @@
+---
 Metadata:
-  conformance: IEEE SA P3109
-  version: 3.2.0
-  provider: Provider
+  conformance: "IEEE SA P3109"
+  version: "3.2.0"
+  provider: "Provider"
   contact:
     email: info@implementer.site
-    uri: https://implementer.site"
+    uri: https://implementer.site
   implementation:
-    name: release name
-    version: 1.0.0
-    date: 2026-01-23T00:58Z
+    name: "release name"
+    version: "1.0.0"
+    timestamp: 2026-01-24T19:30Z
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Constraints.yaml
 
 Core32:
-  - Add(fx, fy, fr, ρ):
+  - Add{fx, fy, fr, ρ}:
       - ( fx == fy )
       - ( BitwidthOf(fr) >= BitwidthOf(fx) )
       - ( PrecisionOf(fr) >= PrecisionOf(fx) )
       - ρ:
           - ( ToNearestTiesToEven, OvfInf )
-          - ( ToNearestTiesToEven, SatFinite )
-  - SqrtFast(fx, fr, ρ):
-      - ( fx in {Binary8p3se, Binary8p4se} )
-      - ( fr in {Binary8p3se, Binary8p4se} )
-      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
+          - ( ToNearestTiesToEven, SatPropagate )
+  - Sqrt{fx, fr, ρ}:
+      - ( fx == fr )
       - ρ:
-          - ( ToNearestTiesToEven, SatFinite )
-          - ( TowardZero, SatFinite )
-
+          - ( ToNearestTiesToEven, SatPropagate )
+          - ( TowardZero, SatPropagate )
+  - Other{fx, fr, ρ}: 
+      - ( fx == fr )
+ 
 Core64:
-  - Add(fx, fy, fr, ρ):
+  - Add{fx, fy, fr, ρ}:
       - ( fx == fy )
-      - ( fx in {Binary8p3se, Binary8p4se} )
-      - ( fr in {Binary10p6se} )
-  - FMA(fx, fy, fz, fr, ρ):
-      - ( fx == fy )
-      - ( fz == fr )
-      - ( BitwidthOf(fr) >= BitwidthOf(fx) )
-      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
+      - ( fx in [Binary8p3se, Binary8p4se] )
+      - ( fr in [Binary10p6se] )
       - ρ:
           - ( ToNearestTiesToEven, OvfInf )
           - ( ToNearestTiesToEven, SatFinite )
+  - FMA{fx, fy, fz, fr, ρ}:
+      - [ ( fx == fy ), ( fz == fr ) ]
+      - [ ( BitwidthOf(fr) >= BitwidthOf(fx) ), ( PrecisionOf(fr) >= PrecisionOf(fx) ) ]
+      - ρ:
+          - ( RoundOf(fr) in [NearestTiesToEven] )
+          - ( SatOf(fr) in [OvfInf, SatFinite] )

@@ -1,27 +1,28 @@
+---
 Metadata:
-  conformance: IEEE SA P3109
-  version: 3.2.0
-  provider: Provider
+  conformance: "IEEE SA P3109"
+  version: "3.2.0"
+  provider: "Provider"
   contact:
     email: info@implementer.site
     uri: https://implementer.site
   implementation:
-    name: release name
-    version: 1.0.0
-    date: 2026-01-23T00:53Z
+    name: "release name"
+    version: "1.0.0"
+    timestamp: 2026-01-24T19:30Z
   Configurations:
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Configurations.yaml
 
 Core32:
-  - CoreOperations:
-      - IEEE754_format: "binary32"
+  - IEEE754: binary32
   - Projections:
       - Rounding:
           - NearestTiesToEven
+          - TowardZero
           - StochasticB:
-              - bits: ( Minimum(Precision(fx), 16) )
+              - bits: ( Minimum(PrecisionOf(fx), 16) )
       - Saturation: [ SatPropagate ]
-  - BlockSizes (B):
+  - BlockSizes:
       - core:
           elements: 32
       - accelerated:
@@ -30,28 +31,27 @@ Core32:
           elements: [32, 64]
   - KappaApproximate:
       - SqrtFast
-      - ExpFast
-        - ExpFast1
-        - ExpFast2
+      - ExpFast:
+        - ExpFast.1
+        - ExpFast.2
 
 Core64:
-  - CoreOperations:
-      - IEEE754_format: [binary32, binary64]
+  - IEEE754: [binary32, binary64]
   - Projections:
       - Rounding:
           - NearestTiesToEven
           - TowardNegative
           - TowardPositive
           - StochasticB:
-              - bits: ( Minimum(Precision(fx), 16) )
+              - bits: ( Minimum(PrecisionOf(fx), 16) )
               - notes:
                   - description: xoroshiro128++ using top 16 bits.
                   - reference:
                       uri: >
                         https://implementer.site/P3109/Implementation/v1.0.0/
                         Stochastic/Xoshiro128plusplus.c
-      - Saturation: [ OvfInf, SatPropagate ]
-  - BlockSizes (B):
+      - Saturation: [ OvfInf, SatFinite ]
+  - BlockSizes:
       - core:
           elements: [16, 32]
       - accelerated:
@@ -60,8 +60,6 @@ Core64:
           elements: ( 2^i for i in [4..24] )
   - KappaApproximate:
       - SqrtFast
-      - SinFast
       - ExpFast:
-        - ExpFast1
-        - ExpFast2
-        
+        - ExpFast.1
+        - ExpFast.2
