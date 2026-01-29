@@ -9,64 +9,64 @@ Metadata:
   implementation:
     name: "release name"
     version: "1.0.0"
-    timestamp: 2026-01-24T19:30Z
+    timestamp: "2026-01-29T04:21Z"
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Kappas.yaml
 
-SqrtFast:
-  Approximates: Sqrt{fx, fr, ρ}
-  Kappa:
-    - interval: ( [>=(-Inf), <=(Inf)] )
-      kappa: 1
-  Constraints:
-    - (fx == fr)
-  ρ:
-    Rounding: [ NearestTiesToEven, TowardZero ]
-    Saturation: [ SatFinite ]
-  Verification: "Exhaustive testing performed for all supported formats."
-  Function:
-    uri: https://implementer.site/P3109/Kappas/SqrtFast.c
+(Core32, Core64):
+  SqrtFast:
+    Approximates: Sqrt{fx, fr, ρ}
+    Kappas:
+      - { interval: "[ -Inf, Inf ]", kappa: 1 }
+    Constraints:
+      - "fx == fr"
+      - "fx in [Binary8p3se, Binary8p4se]"
+    Projections:
+      [ [NearestTiesToEven, TowardZero], [NearestTiesToEven, SatFinite]  ]
+    Verification:
+      note: "Exhaustive testing performed for all supported formats."
+      function:
+        uri: https://implementer.site/P3109/Kappas/SqrtFast.c
 
-ExpFast.1:
-  - Approximates: Exp{fx, fr, ρ}
-  - Constraints:
-      - ( fx == fr )
-      - ( fx in [ Binary8p3se ] )      
-  - ρ:
-      Rounding:
-        - ToOdd
-        - StochasticB:
-            bits: 4
-      Saturation: [ SatPropagate ]
-  - Kappa:
-    - interval: ( [>=(-Inf), <(0)] )
-      kappa: 1
-    - interval: ( [>=(0), <=(1)] )
-      kappa: 0
-    - interval: ( [>(1), <=(Inf)] )
-      kappa: 1
-  - Verification:
-      method: "statistical sampling"
-      note: "10 million random samples per range, all special cases verified"
-  - Function:
-      uri: https://implementer.site/P3109/Kappas/ExpFast.jl"
+Core64:
+  ExpFast.1:
+    - Approximates: Exp{fx, fr, ρ}
+    - Kappas:
+        - interval: "[ -Inf, 0 )"
+          kappa: 1
+        - interval: "[ 0, 1 ]"
+          kappa: 0
+        - interval: ( 1, Inf ]
+          kappa: 1
+    - Constraints:
+        - fx == fr
+        - fx in [ Binary8p3se ]
+    - Projections:
+        RoundingMode:
+          - ToOdd
+          - StochasticB:
+            - bits: (4)
+        SaturationMode:
+          - SatPropagate
+    - Verification:
+        method: statistical sampling
+        note: 10 million random samples per range.
+        function:
+          uri: https://implementer.site/P3109/Kappas/ExpFast.jl"
 
-ExpFast.2:
-  - Approximates: Exp{fx, fr, ρ}
-  - Constraints:
-      - ( fx in [ Binary8p3se ] )
-      - ( fr in [ Binary8p4se ] )
-  - ρ:
-      Rounding: [ NearestTiesToEven, ToOdd ]
-      Saturation: [ SatPropagate ]
-  - Kappa:
-    - interval: ( [>=(-Inf), <(-1)] )
-      kappa: 1
-    - interval: ( [>=(-1), <=(1)] )
-      kappa: 0
-    - interval: ( [>(1), <(Inf)] )
-      kappa: 1
-  - Verification:
-      method: "statistical sampling"
-      note: "10 million random samples per range, all special cases verified"
-  - Function:
-      uri: https://implementer.site/P3109/Kappas/ExpFast.jl
+  ExpFast.2:
+    - Approximates: Exp{fx, fr, ρ}
+    - Constraints:
+        - "fx in [ Binary8p3se ]"
+        - "fr in [ Binary8p4se ]"
+    - Projections:
+        RoundingMode: [ NearestTiesToEven, ToOdd ]
+        SaturationMode: [ SatPropagate ]
+    - Kappas:
+      - {interval: "[ -Inf, -1 )", kappa: 1}
+      - {interval: "[ -1, 1 ]", kappa: 0}
+      - {interval: "( 1, Inf ]", kappa: 1}
+    - Verification:
+        method: "statistical sampling"
+        note: "10 million random samples per range, all special cases verified"
+        function:
+          uri: https://implementer.site/P3109/Kappas/ExpFast.jl

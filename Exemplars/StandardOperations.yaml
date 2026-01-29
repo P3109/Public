@@ -8,7 +8,7 @@ Metadata:
   source:
     uri:  https://github.com/P3109/Public/blob/main/Exemplars/StandardOperations.yaml
     version: "0.1.0"
-    timestamp: 2026-01-24T19:30Z
+    timestamp: "2026-01-29T04:21Z"
 
 Classification:
   predicates: [IsZero, IsOne, IsNan, IsSignMinus, IsFinite,
@@ -79,7 +79,7 @@ Conversion:
   IEEE754:
     - ConvertToIEEE754:
       - formats:  # one of
-        - binary32
+        - Binary32
         - binary64
         - [ binary32, binary64 ]
     - ConvertFromIEEE754:
@@ -93,6 +93,7 @@ Conversion:
 Format:
   defining: [BitwidthOf, PrecisionOf, SignednessOf, DomainOf]
   derived: [TrailingBitsOf, ExponentBitsOf, ExponentBiasOf]
-  extrema: [MaxFiniteOf, MinFiniteOf, MaxSubnormalOf, MaxPositiveOf, 
+  extrema: [MaxFiniteOf, MinFiniteOf, MaxSubnormalOf, MaxPositiveOf,
             MinPositiveOf, MaxNormalOf, MinNormalOf]
   value: [NextLessThan, NextGreaterThan]
+

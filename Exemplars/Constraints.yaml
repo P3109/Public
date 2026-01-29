@@ -9,36 +9,59 @@ Metadata:
   implementation:
     name: "release name"
     version: "1.0.0"
-    timestamp: 2026-01-24T19:30Z
+    timestamp: "2026-01-29T21:46Z"
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Constraints.yaml
 
 Core32:
   - Add{fx, fy, fr, ρ}:
-      - ( fx == fy )
-      - ( BitwidthOf(fr) >= BitwidthOf(fx) )
-      - ( PrecisionOf(fr) >= PrecisionOf(fx) )
-      - ρ:
-          - ( ToNearestTiesToEven, OvfInf )
-          - ( ToNearestTiesToEven, SatPropagate )
+      Constraints:
+        - "fx == fy"
+        - "BitwidthOf(fr) >= BitwidthOf(fx)"
+        - "PrecisionOf(fr) >= PrecisionOf(fx)"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
   - Sqrt{fx, fr, ρ}:
-      - ( fx == fr )
-      - ρ:
-          - ( ToNearestTiesToEven, SatPropagate )
-          - ( TowardZero, SatPropagate )
-  - Other{fx, fr, ρ}: 
-      - ( fx == fr )
- 
+      Constraints:
+        - "fx == fr"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
+        - { RoundingMode: TowardZero, SaturationMode: SatPropagate }
+  - Other{fx, fr, ρ}:   # matches all StandardOperations `Function{fx, fr, ρ}` not given above
+      Constraints:
+        - "fx == fr"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
+  - Other{fx, fy, fr, ρ}:   # matches all StandardOperations `Function{fx, fy, fr, ρ}` not given above
+      Constraints:
+        - "fx == fx"
+        - "fy == fr"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
+
 Core64:
   - Add{fx, fy, fr, ρ}:
-      - ( fx == fy )
-      - ( fx in [Binary8p3se, Binary8p4se] )
-      - ( fr in [Binary10p6se] )
-      - ρ:
-          - ( ToNearestTiesToEven, OvfInf )
-          - ( ToNearestTiesToEven, SatFinite )
+      Constraints:
+        - "fx == fy"
+        - "fx in [Binary8p3se, Binary8p4se]"
+        - "fr in [Binary10p6se]"
+      Projections:
+          - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
+          - { RoundingMode: NearestTiesToEven, SaturationMode: SatFinite }
   - FMA{fx, fy, fz, fr, ρ}:
-      - [ ( fx == fy ), ( fz == fr ) ]
-      - [ ( BitwidthOf(fr) >= BitwidthOf(fx) ), ( PrecisionOf(fr) >= PrecisionOf(fx) ) ]
-      - ρ:
-          - ( RoundOf(fr) in [NearestTiesToEven] )
-          - ( SatOf(fr) in [OvfInf, SatFinite] )
+      Constraints:
+        - [ "fx == fy", "fz == fr" ]
+        - [ "BitwidthOf(fr) >= BitwidthOf(fx)", "PrecisionOf(fr) >= PrecisionOf(fx)" ]
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
+  - Other{fx, fr, ρ}:   # matches all StandardOperations `Function{fx, fr, ρ}` not given above
+      Constraints:
+        - "fx == fr"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
+  - Other{fx, fy, fr, ρ}:   # matches all StandardOperations `Function{fx, fy, fr, ρ}` not given above
+      Constraints:
+        - "fx == fx"
+        - "fy == fr"
+      Projections:
+        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }

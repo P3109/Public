@@ -9,7 +9,7 @@ Metadata:
   implementation:
     name: "release name"
     version: "1.0.0"
-    timestamp: 2026-01-24T19:30Z
+    timestamp: "2026-01-29T21:46Z"
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Profiles.yaml
 
 Core32:
@@ -19,5 +19,5 @@ Core32:
 
 Core64:
   formats:
-    - ( 'Binary4p$(i)sf' for i in 1:3 )
-    - ( 'Binary8p$(i)se' for i in [3,4] )
+    - ( "Binary4p$(i)sf" for i in 1:3 )
+    - ( "Binary8p$(i)se" for i in [3, 4] )

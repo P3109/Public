@@ -9,7 +9,7 @@ Metadata:
   implementation:
     name: "release name"
     version: "1.0.0"
-    timestamp: 2026-01-24T19:30Z
+    timestamp: "2026-01-29T04:21Z"
   Configurations:
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Configurations.yaml
 
@@ -17,23 +17,21 @@ Core32:
   - IEEE754: binary32
   - Projections:
       - Rounding:
-          - NearestTiesToEven
-          - TowardZero
-          - StochasticB:
-              - bits: ( Minimum(PrecisionOf(fx), 16) )
-      - Saturation: [ SatPropagate ]
+        - NearestTiesToEven
+        - TowardZero
+        - StochasticB:
+          - bits: ("Minimum(PrecisionOf(fx), 16)")
+      - Saturation:
+        - SatPropagate
   - BlockSizes:
       - core:
-          elements: 32
+          elements: [32]
       - accelerated:
-          elements: 64
+          elements: [64]
       - supported:
           elements: [32, 64]
   - KappaApproximate:
-      - SqrtFast
-      - ExpFast:
-        - ExpFast.1
-        - ExpFast.2
+      - SqrtFast      # the name of the approximate function
 
 Core64:
   - IEEE754: [binary32, binary64]
@@ -43,7 +41,7 @@ Core64:
           - TowardNegative
           - TowardPositive
           - StochasticB:
-              - bits: ( Minimum(PrecisionOf(fx), 16) )
+              - bits: ("Minimum(PrecisionOf(fx), 16)")
               - notes:
                   - description: xoroshiro128++ using top 16 bits.
                   - reference:
@@ -57,9 +55,9 @@ Core64:
       - accelerated:
           elements: 64
       - supported:
-          elements: ( 2^i for i in [4..24] )
+          elements: ( "2^$(i)" for i in 4:24 )
   - KappaApproximate:
       - SqrtFast
-      - ExpFast:
-        - ExpFast.1
-        - ExpFast.2
+      - ExpFast:      # the name of the approximate function
+        - ExpFast.1   #   specifics of coverage1 (distinct from coverage2)
+        - ExpFast.2   #   specifics of coverage2 (distinct from coverage1)
