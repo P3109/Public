@@ -27,7 +27,7 @@ Core32:
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
         - { RoundingMode: TowardZero, SaturationMode: SatPropagate }
-  - Other{fx, fr, ρ}:   # matches all StandardOperations `Function{fx, fr, ρ}` not given above
+  - Other{fx, fr, ρ}:       # matches all StandardOperations `Function{fx, fr, ρ}` not given above
       Constraints:
         - "fx == fr"
       Projections:
@@ -57,11 +57,5 @@ Core64:
   - Other{fx, fr, ρ}:   # matches all StandardOperations `Function{fx, fr, ρ}` not given above
       Constraints:
         - "fx == fr"
-      Projections:
-        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
-  - Other{fx, fy, fr, ρ}:   # matches all StandardOperations `Function{fx, fy, fr, ρ}` not given above
-      Constraints:
-        - "fx == fx"
-        - "fy == fr"
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
