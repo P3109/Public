@@ -1,63 +1,62 @@
 ---
 Metadata:
-  conformance: "IEEE SA P3109"
-  version: "3.2.0"
-  provider: "Provider"
+  conformance: IEEE SA P3109
+  version: 3.2.0
+  provider: Provider
   contact:
     email: info@implementer.site
     uri: https://implementer.site
   implementation:
-    name: "release name"
-    version: "1.0.0"
-    timestamp: "2026-01-29T04:21Z"
+    name: release name
+    version: 1.0.0
+    timestamp: 2026-01-30T20:13Z
   Configurations:
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Configurations.yaml
-
-Core32:
-  - IEEE754: binary32
-  - Projections:
-      - Rounding:
-        - NearestTiesToEven
-        - TowardZero
-        - StochasticB:
-          - bits: ("Minimum(PrecisionOf(fx), 16)")
-      - Saturation:
-        - SatPropagate
-  - BlockSizes:
-      - core:
-          elements: [32]
-      - accelerated:
-          elements: [64]
-      - supported:
-          elements: [32, 64]
-  - KappaApproximate:
-      - SqrtFast      # the name of the approximate function
-
-Core64:
-  - IEEE754: [binary32, binary64]
-  - Projections:
-      - Rounding:
-          - NearestTiesToEven
-          - TowardNegative
-          - TowardPositive
-          - StochasticB:
-              - bits: ("Minimum(PrecisionOf(fx), 16)")
-              - notes:
-                  - description: xoroshiro128++ using top 16 bits.
-                  - reference:
-                      uri: >
-                        https://implementer.site/P3109/Implementation/v1.0.0/
-                        Stochastic/Xoshiro128plusplus.c
-      - Saturation: [ OvfInf, SatFinite ]
-  - BlockSizes:
-      - core:
-          elements: [16, 32]
-      - accelerated:
-          elements: 64
-      - supported:
-          elements: ( "2^$(i)" for i in 4:24 )
-  - KappaApproximate:
-      - SqrtFast
-      - ExpFast:      # the name of the approximate function
-        - ExpFast.1   #   specifics of coverage1 (distinct from coverage2)
-        - ExpFast.2   #   specifics of coverage2 (distinct from coverage1)
+# reset context
+Inference:
+  IEEE754: binary32
+  Projections:
+    Rounding:
+      - NearestTiesToEven
+      - TowardZero
+      - StochasticB:
+          - bits: 8
+    Saturation:
+      - OvfInf
+      - SatPropagate
+  BlockSizes:
+    core: 32
+    accelerated: 64
+    supported: [32, 64]
+  KappaApproximate:
+    - SqrtFast
+# reset context 
+Training:
+  IEEE754:
+    - binary32
+    - binary64
+  Projections:
+    Rounding:
+      - NearestTiesToEven
+      - TowardNegative
+      - TowardPositive
+      - StochasticB:
+          - bits: (' Minimum(PrecisionOf(fx), 16) ')
+          - notes:
+              - description: xoroshiro128++ using top 16 bits.
+              - reference:
+                  uri: >
+                    https://implementer.site/P3109/Implementation/v1.0.0/
+                    Stochastic/Xoshiro128plusplus.c
+    Saturation:
+      - OvfInf
+      - SatFinite
+  BlockSizes:
+    core: [16, 32]
+    accelerated: 64
+    supported: (' "2^$(i)" for i in 4:24 ')
+  KappaApproximate:
+    - SqrtFast
+    - ExpFast:
+        - ExpFast.1
+        - ExpFast.2

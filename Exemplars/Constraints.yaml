@@ -9,53 +9,50 @@ Metadata:
   implementation:
     name: "release name"
     version: "1.0.0"
-    timestamp: "2026-01-29T21:46Z"
+    timestamp: "2026-01-31T02:35Z"
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Constraints.yaml
-
-Core32:
-  - Add{fx, fy, fr, ρ}:
-      Constraints:
-        - "fx == fy"
-        - "BitwidthOf(fr) >= BitwidthOf(fx)"
-        - "PrecisionOf(fr) >= PrecisionOf(fx)"
+# reset context
+Inference:
+  - "Add<fx, fy, fr, ρ>(x, y) -> r":
+      Requires:
+        - (' fx == fy ')
+        - (' BitwidthOf(fr) >= BitwidthOf(fx) ')
+        - (' PrecisionOf(fr) >= PrecisionOf(fx) ')
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
-  - Sqrt{fx, fr, ρ}:
-      Constraints:
-        - "fx == fr"
+  - "Sqrt<fx, fr, ρ>(x) -> r":
+      Requires:
+        - (' fx == fr ')
       Projections:
-        - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
-        - { RoundingMode: TowardZero, SaturationMode: SatPropagate }
-  - Other{fx, fr, ρ}:       # matches all StandardOperations `Function{fx, fr, ρ}` not given above
-      Constraints:
-        - "fx == fr"
+        RoundingMode: [NearestTiesToEven, ToZero]
+        SaturationMode: [OvfInf, SatPropagate]
+  - "Other<fx, fr, ρ>(x) -> r":       # matches all StandardOperations `Function<fx, fr, ρ}` not given above
+      Requires:
+        - (' fx == fr ')
+  - "Other<fx, fy, fr, ρ>(x, y) -> r":   # matches all StandardOperations `Function<fx, fy, fr, ρ}` not given above
+      Requires:
+        - [(' fx == fx '), (' fy == fr ')]
       Projections:
-        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
-  - Other{fx, fy, fr, ρ}:   # matches all StandardOperations `Function{fx, fy, fr, ρ}` not given above
-      Constraints:
-        - "fx == fx"
-        - "fy == fr"
-      Projections:
-        - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
-
-Core64:
-  - Add{fx, fy, fr, ρ}:
-      Constraints:
-        - "fx == fy"
-        - "fx in [Binary8p3se, Binary8p4se]"
-        - "fr in [Binary10p6se]"
+        - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
+# reset contex
+Training:
+  - "Add<fx, fy, fr, ρ>:(x, y) -> r":
+      Requires:
+        - (' fx == fy ')
+        - (' fx in [Binary4p2se, Binary8p4se] ')
+        - (' fr in [Binary8p4se] ')
       Projections:
           - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
           - { RoundingMode: NearestTiesToEven, SaturationMode: SatFinite }
-  - FMA{fx, fy, fz, fr, ρ}:
-      Constraints:
-        - [ "fx == fy", "fz == fr" ]
-        - [ "BitwidthOf(fr) >= BitwidthOf(fx)", "PrecisionOf(fr) >= PrecisionOf(fx)" ]
+  - "FMA<fx, fy, fz, fr, ρ>(x, y, z) -> r":
+      Requires:
+        - [ (' fx == fy '), (' fz == fr ') ]
+        - [ (' BitwidthOf(fr) >= BitwidthOf(fx) '), (' PrecisionOf(fr) >= PrecisionOf(fx) ') ]
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatPropagate }
-  - Other{fx, fr, ρ}:   # matches all StandardOperations `Function{fx, fr, ρ}` not given above
-      Constraints:
-        - "fx == fr"
+  - "Other<fx, fr, ρ>(x) -> r":  # matches all StandardOperations `Fn<fx, fr, ρ>` not given above
+      Requires:
+        - (' fx == fr ')
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }

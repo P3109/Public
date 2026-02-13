@@ -11,35 +11,35 @@ Metadata:
     version: "1.0.0"
     timestamp: "2026-01-29T04:21Z"
     uri: https://implementer.site/P3109/Implementation/v1.0.0/Kappas.yaml
-
-(Core32, Core64):
+# reset context
+Inference:
   SqrtFast:
-    Approximates: Sqrt{fx, fr, ρ}
+    Approximates: "Sqrt<fx, fr, ρ>(x) -> r"
     Kappas:
-      - { interval: "[ -Inf, Inf ]", kappa: 1 }
-    Constraints:
-      - "fx == fr"
-      - "fx in [Binary8p3se, Binary8p4se]"
+      - { interval: '[ -Inf, Inf ]', kappa: 1 }
+    Requires:
+      - ('fx == fr')
+      - ('fx in [Binary8p3se, Binary8p4se]')
     Projections:
       [ [NearestTiesToEven, TowardZero], [NearestTiesToEven, SatFinite]  ]
     Verification:
       note: "Exhaustive testing performed for all supported formats."
       function:
         uri: https://implementer.site/P3109/Kappas/SqrtFast.c
-
-Core64:
+# reset context
+Training:
+  ExpFast:
+    - Approximates: "Exp<fx, fr, ρ>(x) -> r"
+    - Verification:
+        method: statistical sampling
+        note: 10 million random samples per range.
+        function:
+          uri: https://implementer.site/P3109/Kappas/ExpFast.jl
+  # first approximation configuration
   ExpFast.1:
-    - Approximates: Exp{fx, fr, ρ}
-    - Kappas:
-        - interval: "[ -Inf, 0 )"
-          kappa: 1
-        - interval: "[ 0, 1 ]"
-          kappa: 0
-        - interval: ( 1, Inf ]
-          kappa: 1
-    - Constraints:
-        - fx == fr
-        - fx in [ Binary8p3se ]
+    - Requires:
+        - (' fx == fr ')
+        - (' fx in [ Binary8p3se ] ')
     - Projections:
         RoundingMode:
           - ToOdd
@@ -47,26 +47,19 @@ Core64:
             - bits: (4)
         SaturationMode:
           - SatPropagate
-    - Verification:
-        method: statistical sampling
-        note: 10 million random samples per range.
-        function:
-          uri: https://implementer.site/P3109/Kappas/ExpFast.jl"
-
+    - Kappas:
+        - {interval: '[ -Inf, 0 )', kappa: 1}
+        - {interval: '[ 0, 1 ]', kappa: 0}
+        - {interval: '( 1, Inf ]', kappa: 1}
+  # second approximation configuration
   ExpFast.2:
-    - Approximates: Exp{fx, fr, ρ}
-    - Constraints:
-        - "fx in [ Binary8p3se ]"
-        - "fr in [ Binary8p4se ]"
+    - Requires:
+        - (' fx in [ Binary8p3se ] ')
+        - (' fr in [ Binary8p4se ] ')
     - Projections:
         RoundingMode: [ NearestTiesToEven, ToOdd ]
         SaturationMode: [ SatPropagate ]
     - Kappas:
-      - {interval: "[ -Inf, -1 )", kappa: 1}
-      - {interval: "[ -1, 1 ]", kappa: 0}
-      - {interval: "( 1, Inf ]", kappa: 1}
-    - Verification:
-        method: "statistical sampling"
-        note: "10 million random samples per range, all special cases verified"
-        function:
-          uri: https://implementer.site/P3109/Kappas/ExpFast.jl
+      - {interval: '[ -Inf, -1 )', kappa: 1}
+      - {interval: '[ -1, 1 ]', kappa: 0}
+      - {interval: '( 1, Inf ]', kappa: 1}
