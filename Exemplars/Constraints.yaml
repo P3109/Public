@@ -35,7 +35,7 @@ Inference:
         - [(' fx == fx '), (' fy == fr ')]
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: OvfInf }
-# reset contex
+# reset context
 Training:
   - "Add<fx, fy, fr, ρ>:(x, y) -> r":
       Requires:
@@ -56,3 +56,4 @@ Training:
         - (' fx == fr ')
       Projections:
         - { RoundingMode: NearestTiesToEven, SaturationMode: SatOvf }
+
