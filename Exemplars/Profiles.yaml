@@ -16,8 +16,9 @@ Inference:
   formats:
     - Binary8p3se
     - Binary8p4se
-#
+# reset context
 Training:
   formats:
     - (' "Binary4p$(i)sf" for i in 1:3 ')
     - (' "Binary8p$(i)se" for i in [3, 4] ')
+
