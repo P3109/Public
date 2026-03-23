@@ -1,7 +1,10 @@
 ```
+
+UNDER REVISION
+
 These files give the code points and the corresponding values for all formats
     BinaryKpPuf, BinaryKpPue, BinaryKpPsf, BinaryKpPse
-for each bitwidth from K=3 through K=11 at all precisions P.
+for each bitwidth from K=3 through K=16 at all precisions P.
 
 Each file is stored as a .csv with three labeled columns:
     codepoint, value, subnormal.
