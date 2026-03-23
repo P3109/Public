@@ -1,4 +1,4 @@
-codepoint,sprintf_a,subnormal
+codepoint,value,subnormal
 0x00,0x0p+0, 
 0x01,0x1p-31, 
 0x02,0x1p-30, 
