@@ -1,7 +1,11 @@
 ```
-These files give the code points and corresponding values for all formats for each bitwidth K shown.
-Each file is stored as a .csv with three labeled columns: codepoint, value, subnormal.
-  subnormal values have an "!" in the subnormal column.
+These files give the code points and the corresponding values for all formats
+    BinaryKpPuf, BinaryKpPue, BinaryKpPsf, BinaryKpPse
+for each bitwidth from K=3 through K=11 at all precisions P.
+
+Each file is stored as a .csv with three labeled columns:
+    codepoint, value, subnormal.
+    note: subnormal values are marked with an "*" in the subnormal column.
 
 The values are provided in hexadecimal scientific notation (sprintf "%a" format).
 
