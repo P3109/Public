@@ -1,9 +1,9 @@
 ```
 These files give the code points and corresponding values for all formats for each bitwidth K shown.
-Each file is stored as a .csv with three labeled columns: codepoint, sprintf_a, subnormal.
+Each file is stored as a .csv with three labeled columns: codepoint, value, subnormal.
   subnormal values have an "!" in the subnormal column.
 
-The values (sprintf_a column) are provided in hexadecimal scientific notation (sprintf "%a" format).
+The values are provided in hexadecimal scientific notation (sprintf "%a" format).
 
   sprintf("%a", 3.5);
   output: "0x1.cp+1"
