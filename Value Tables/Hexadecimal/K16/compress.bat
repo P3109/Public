@@ -1,0 +1,1 @@
+for /d %%X in (*) do "C:\Progra~1\7-Zip\7z.exe" a -mx=7 -m0=lzma2 -md=1536m -mfb=273 -ms=on "%%X.7z" "%%X\"
