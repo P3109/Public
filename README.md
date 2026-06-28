@@ -14,7 +14,7 @@ You may use the GitHub ["Issues"](https://github.com/P3109/Public/issues) facili
 
 ## Contents
 
-  - [Interim Report](https://github.com/P3109/Public/blob/main/IEEE%20WG%20P3109%20Interim%20Report%20v3.2.1.pdf)
+  - [Interim Report](https://github.com/P3109/Public/blob/main/IEEE%20WG%20P3109%20Interim%20Report.pdf)
   - [References](References/README.md)
   - [Briefs](Briefs/README.md)
   - Value Tables
