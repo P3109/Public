@@ -19,4 +19,4 @@ You may use the GitHub ["Issues"](https://github.com/P3109/Public/issues) facili
   - [Briefs](Briefs/README.md)
   - Value Tables
      - [Generated tables](https://github.com/P3109/Public/tree/main/Value%20Tables)
-     - [gfloat]([https://github.com/P3109/Public/tree/main/gfloat)
+     - [gfloat](https://github.com/P3109/Public/tree/main/gfloat)
