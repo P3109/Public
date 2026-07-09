@@ -15,8 +15,8 @@ You may use the GitHub ["Issues"](https://github.com/P3109/Public/issues) facili
 ## Contents
 
   - [Interim Report](https://github.com/P3109/Public/blob/main/IEEE%20P3109%20WG%20Interim%20Report.pdf)
-  - [References](References/README.md)
+  - [References](References/README.md)https://github.com/P3109/Public/tree/main/Value%20Tables
   - [Briefs](Briefs/README.md)
   - Value Tables
-     - [Notebook](Value%20Tables/make-value-tables.ipynb)
      - [Generated tables](https://github.com/P3109/Public/tree/main/Value%20Tables)
+     - [gfloat](https://github.com/P3109/Public/tree/main/gfloat)
