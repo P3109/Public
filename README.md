@@ -19,4 +19,4 @@ You may use the GitHub ["Issues"](https://github.com/P3109/Public/issues) facili
   - [Briefs](Briefs/README.md)
   - Value Tables
      - [Notebook](Value%20Tables/make-value-tables.ipynb)
-     - [Generated tables](https://htmlpreview.github.io/?https://github.com/P3109/Public/blob/main/Value%20Tables/html/index.html)
+     - [Generated tables](https://github.com/P3109/Public/tree/main/Value%20Tables)
